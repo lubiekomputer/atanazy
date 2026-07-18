@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Przeciwko Buddyzmowi Fałszywej Drodze</title>
+  <link href="mot.css" rel="stylesheet" type="text/css" media="all">
+      <link rel="icon" href="hegel/ikonka.ico" type="image/x-icon">
+
+  <style>
+
+    body {
+      background-color: #f0ede4;
+      font-family: "Times New Roman", Times, serif;
+      color: #111;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ===== NAGŁÓWEK STRONY ===== */
+    #page-header {
+      background-color: #2a1a0e;
+      color: #e8d9b0;
+      text-align: center;
+      padding: 14px 10px 10px;
+      border-bottom: 4px ridge #8b6914;
+    }
+
+    #page-header h1 {
+      margin: 0 0 4px 0;
+      font-size: 1.7em;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 0 #000;
+    }
+
+    #page-header p.subtitle {
+      margin: 0;
+      font-size: 0.92em;
+      color: #c9b87a;
+      font-style: italic;
+    }
+
+    /* ===== PASEK NAWIGACJI ===== */
+    #navbar {
+      background-color: #3d2b10;
+      text-align: center;
+      padding: 5px;
+      border-bottom: 2px solid #8b6914;
+    }
+
+    #navbar a {
+      color: #f5d98b;
+      font-size: 0.85em;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    #navbar a:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
+
+    /* ===== KONTENER GŁÓWNY ===== */
+    .container {
+      max-width: 820px;
+      margin: 18px auto;
+      padding: 0 10px;
+    }
+
+    /* ===== SEKCJA WSTĘPU ===== */
+    #intro-box {
+      background: #fff8e8;
+      border: 2px inset #8b6914;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+      font-size: 0.92em;
+    }
+
+    #intro-box p {
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    /* ===== TABELA KART ===== */
+    .books-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 2px solid #7a5c1e;
+    }
+
+    .books-table thead tr {
+      background-color: #2a1a0e;
+      color: #e8d9b0;
+      text-align: left;
+    }
+
+    .books-table thead th {
+      padding: 7px 10px;
+      font-size: 0.85em;
+      font-weight: bold;
+      border-right: 1px solid #5a3a0e;
+      letter-spacing: 0.5px;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    .books-table thead th:last-child {
+      border-right: none;
+    }
+
+    .books-table tbody tr {
+      border-bottom: 1px solid #c9a85c;
+      vertical-align: top;
+    }
+
+    .books-table tbody tr:nth-child(odd) {
+      background-color: #fffdf5;
+    }
+
+    .books-table tbody tr:nth-child(even) {
+      background-color: #f5eed9;
+    }
+
+    .books-table tbody tr:hover {
+      background-color: #faedc0;
+    }
+
+    .books-table td {
+      padding: 8px 10px;
+      font-size: 0.9em;
+      border-right: 1px solid #d4b870;
+      vertical-align: middle;
+    }
+
+    .books-table td:last-child {
+      border-right: none;
+    }
+
+    /* kolumna ze zdjęciem */
+    .td-img {
+      width: 200px;
+      text-align: center;
+    }
+
+    .td-img img {
+      width: 158px;
+      height: 172px;
+      object-fit: cover;
+      border: 2px ridge #8b6914;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* kolumna tytułu */
+    .td-title {
+      width: 42%;
+    }
+
+    .td-title strong {
+      display: block;
+      font-size: 1em;
+      margin-bottom: 2px;
+      color: #1a0e00;
+    }
+
+    .td-title span.author {
+      color: #5a3a0e;
+      font-style: italic;
+      font-size: 0.88em;
+    }
+
+    /* kolumna wieku */
+    .td-century {
+      width: 80px;
+      text-align: center;
+      color: #5a3a0e;
+      font-style: italic;
+      font-size: 0.88em;
+    }
+
+    /* kolumna linków */
+    .td-links {
+      width: 22%;
+    }
+
+    .td-links a {
+      display: block;
+      color: #003399;
+      font-size: 0.85em;
+      text-decoration: underline;
+      margin-bottom: 3px;
+      word-break: break-word;
+    }
+
+    .td-links a:visited {
+      color: #551a8b;
+    }
+
+    .td-links a:hover {
+      color: #cc0000;
+    }
+
+    /* ===== STOPKA ===== */
+    #page-footer {
+      text-align: center;
+      margin: 20px 0 10px;
+      font-size: 0.78em;
+      color: #6b4c1e;
+      border-top: 2px solid #8b6914;
+      padding-top: 8px;
+    }
+
+    /* ===== SEPARATOR ===== */
+    hr.ornament {
+      border: none;
+      border-top: 2px ridge #8b6914;
+      margin: 14px 0;
+    }
+    
+    .przyp-box {
+      background-color: #000000; 
+      color: #ffffff;           
+      border-left: 5px solid #fc69ff; 
+      padding: 15px 20px;
+      margin: 20px 0;
+      line-height: 1.6;
+      font-style: italic;
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+    }
+
+    .przyp-box a {
+      color: #f5d98b;
+      text-decoration: underline;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+<div id="page-header">
+  <h1>Przeciwko Buddyzmowi Fałszywej Drodze</h1>
+</div>
+
+</div>
+
+<div class="container">
+
+
+  <table class="books-table" cellspacing="0" cellpadding="0">
+    <thead>
+      <tr>
+        <th>&#128100;</th>
+        <th>Tytuł / Autor</th>
+        <th>Wiek</th>
+        <th>Źródła</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td class="td-img">
+          <img src="hegel/Williams-Paul-Profile-e1638529958444.png" alt="Williams-Paul">
+        </td>
+        <td class="td-title">
+          <strong>The Unexpected Way: On Converting from Buddhism to Catholicism</strong>
+          <span class="author">Paul Williams</span>
+        </td>
+        <td class="td-century">XXI w.</td>
+        <td class="td-links">
+          <a href="https://lubimyczytac.pl/ksiazka/137323/nieoczekiwana-droga-nawrocenie-z-buddyzmu-na-katolicyzm" target="_blank"> Nieoczekiwana droga. Nawrócenie z buddyzmu na katolicyzm </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="td-img">
+          <img src="https://atanazy-3.neocities.org/hegel/500px-Jules_Barth%C4%82%C2%A9lemy-Saint-Hilaire.jpg" alt="Jules">
+        </td>
+        <td class="td-title">
+          <strong> Le Bouddha et sa religion </strong>
+          <span class="author">Jules Barthélemy-Saint-Hilaire</span>
+        </td>
+        <td class="td-century">XIX w.</td>
+        <td class="td-links">
+          <a href="https://books.google.pl/books?id=2BcVAAAAQAAJ&printsec=frontcover&hl=pl#v=onepage&q&f=false" target="_blank"> Le Bouddha et sa religion </a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="td-img">
+          <img src="hegel/1779552740441-019e559b-5fed-7288-98aa-f5ac3716c480.png" alt="Auguste">
+        </td>
+        <td class="td-title">
+          <strong>Le Bouddhisme et l'apologétique chrétienne</strong>
+          <span class="author">Auguste Deschamps</span>
+        </td>
+        <td class="td-century">XVIII w.</td>
+        <td class="td-links">
+          <a href="https://books.google.pl/books?id=AS9dAAAAcAAJ&printsec=frontcover&hl=pl#v=onepage&q&f=false" target="_blank">Le Bouddhisme et l'apologétique chrétienne</a>
+
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <hr class="ornament">
+Transmigracja, która jest punktem wyjścia całej tej doktryny, jest zaledwie hipotezą nie do obrony, której Budda bez wątpienia sam nie wymyślił, lecz którą przyjął i z której wywiódł najopłakańsze skutki;
+
+Jego moralność jest niekompletna i próżna, jako że opiera się na ze wszech miar fałszywym poglądzie na naturę człowieka i na życie, jakie on tutaj na dole wiedzie;
+
+Nirwana, czyli nicość, jest pojęciem potwornym, które sprzeciwia się wszelkim instynktom natury ludzkiej, oburza rozum i które niesie ze sobą ateizm.
+
+Sprowadzony do tych pojęć, buddyzm powinien budzić raczej więcej litości niż pogardy; i zaledwie godzien jest uwagi historii; a przecież panował on przez wieki, tak jak panuje wciąż nad ludami bez miary; i ofiaruje ich łatwowierności smutne doktryny, które właśnie poddałem przeglądowi jako jedyny pokarm ich wiary, co jest tym żarliwsze, im bardziej jest niedorzeczne. Pogrąża ich, poprzez ideę transmigracji, w świecie fantastycznym, który nie pozwala im nic pojąć z prawdziwych warunków tego świata, w którym żyją. Wykrętna moralność, która nie zdołała ocalić ludów, nie zdołała przede wszystkim zorganizować ich w społeczeństwa sprawiedliwe i rozumne. Jego doktryna Nirwany poniżyła ich wręcz poniżej poziomu zwierząt, które mają przynajmniej tę przewagę nad człowiekiem, że nie ubóstwiają nicości, o której wcale nie myślą. Jednym słowem, błędnie pojął istotę osoby ludzkiej, jej naturę, obowiązki i godność. Twierdził, że ją wyzwala, a w rzeczywistości doprowadził ją do zguby; chciał ją oświecić, a pogrążył ją w najgłębszych ciemnościach. Jego intencje mogły być wspaniałomyślne; lecz jego ogólne działanie, poza kilkoma rzadkimi wyjątkami, było zgubne; i można pytać z aż nazbyt uzasadnionym niepokojem, czy narody, które zatracił, zdołają kiedykolwiek znaleźć, lub choćby przyjąć, lekarstwo na zło, które im wyrządził i które im jeszcze długo wyrządzać będzie.
+  <hr class="ornament">
+
+<h3>ROZDZIAŁ PIĄTY - Le Bouddha et sa religion</h3>
+
+<p>
+    <strong>Krytyczny rozbiór buddyzmu.</strong>
+</p>
+
+<p>
+</p>
+
+<ul>
+    <li>bezsilność społeczna,</li>
+    <li>egoistyczne zaprzątnięcie sobą,</li>
+    <li>zapomnienie o idei dobra,</li>
+    <li>ignorowanie prawa i wolności,</li>
+    <li>sceptycyzm,</li>
+    <li>nieuleczalna rozpacz,</li>
+    <li>absolutna pogarda dla życia i osoby ludzkiej,</li>
+    <li>ateizm.</li>
+</ul>
+
+Cała ta moralność, choćby nie wiem jak obnosiła się z wyrzeczeniem i poświęceniem, w gruncie rzeczy jest ciasna i interesowna. Nie opiera się ona bowiem jak tylko na jednej jedynej idei, która nie jest ani najdokładniejsza, ani najwznioślejsza, a mianowicie na idei zbawienia wiecznego, rozumianego wszakże tak, jak rozumieją je buddyści, w sensie nicości
+
+lub Nirwany. Jest to nagroda ofiarowana wszelkim wysiłkom człowieka; to cel najwyższy jego wiary; to niewysłowiona cena obiecana wszystkim jego cnotom. Jego życie porządkuje się ku temu celowi według nauk i przykładów mistrza. Lecz człowiek nie działa tu nigdy inaczej, jak tylko w widokach na nagrodę, której się spodziewa. Gasi on wszelkie inne pożądliwości, lecz tę jedną zachowuje; kiełzna wszelkie inne pragnienia, lecz to nienasycone pragnienie wszystkich tych, których mu poświęca, wzrasta w nim. Twierdzę, że tkwi w tym coś, co spacza moralność w całej jej pełni; i bez wahania przypisuję tej egoistycznej trosce o nagrodę i idei Nirwany prawie wszystkie błędy buddyzmu.
+
+Człowiek niewątpliwie dobrze czyni, myśląc przez całe to życie, że coś musi po nim nastąpić
+Czyni dobrze, poddając się tej nieuniknionej konsekwencji, jakakolwiek by ona zresztą była według wierzeń, które przyjmuje; czyni dobrze, myśląc o wieczności, która może mu wyjaśnić zarazem i to, skąd przychodzi, i to, dokąd powraca. W obliczu tej wielkiej idei może on odczuwać zarazem całą swą słabość i całą swą wartość; może ona dać mu klucz do jego przeznaczenia, jeśli potrafi ją badać z dyskrecją i mądrością. Lecz musi on wystrzegać się jej poniżania i niszczenia przez dopatrywanie się w niej i szukanie w niej nagrody, która, choćby nie wiem jak wzniosła się wydawała, staje się niemniej rodzajem zapłaty. Myśl o zbawieniu wiecznym nie jest już wtedy cnotą; jest kalkulacją; a ponieważ nic nie jest bardziej zmienne i niestałe niż kalkulacja i interes, człowiek czuje się rzucony na drogę, na której nie sposób nie czynić fałszywych kroków. W religii prawdziwszej i świętszej człowiek może zdać się na sprawiedliwość Boga co do troski o nagrodzenie lub wieczne ukaranie; lecz w religii, która nie zna Boga,
+
+
+niepowetowanym nieszczęściem religii buddyjskiej jest to, że człowiek pozostaje swoim własnym sędzią; to on sam, z mocy swojej prywatnej powagi, rozstrzyga o tym, co zasługuje na zbawienie lub co się od niego oddala; wyrokuje we własnej sprawie, a to nie jest bynajmniej sposób na pozostanie sprawiedliwym i nieomylnym. Wierzy, że praktykuje cnotę, podczas gdy w rzeczywistości praktykuje jedynie nieustanny egoizm, który kryje się i umacnia aż po najsurowsze umartwienia i najbardziej pyszne odosobnienia.
+
+Nigdy nie pracuje się dla nikogo innego, jak dla własnego zbawienia; nie można sprawić zbawienia innych; co najwyżej można, jak Budda, wskazać im drogę. Lecz trzeba, aby oni sami nią kroczyli, i niepodobna kroczyć za nich. Zbawienie jest zatem wyłącznie indywidualne; wtrąca ono człowieka w zupełne odosobnienie. Im bardziej człowiek się nim zajmuje, tym bardziej oddala się od swoich bliźnich, których zaniedbuje przynajmniej, gdy nie posuwa się aż do tego, by nimi gardzić i od nich uciekać. Toteż zakonnicy, którzy są jakby milicją tej nowej religii i którzy reprezentują jej najwierniejszych i najdoskonalszych szermierzy, są poniekąd obcy społeczeństwu, które jednak ich żywi. Spędzają w nim swoje życie, zatarte o tyle, o ile bezużyteczne, żyjąc tam z jałmużny, którą przygotowuje im praca innych, i nosząc na sobie łachmany, którymi ich pokora nie gardzi, lecz których ich ręce nigdy nie utkały. Asceta zostaje zabrany w całości światu, w którym żyje, przez świat, do którego wzdycha; a przyznawszy, że lenistwo, które często samo siebie nie zna, nie znajduje dla siebie ukrytego zysku w tej rzekomej świętości, czemuż ta świętość służyć może, jeśli nie samemu ascecie? Co stałoby się ze społeczeństwem, włączając w to samych pustelników, których ono utrzymuje swoją łatwą hojnością, jeśli
+
+
+każdy chciałby naśladować tak pobożne przykłady? Wyrzeczenie jest rzeczą piękną, bez wątpienia; lecz kiedy pretenduje się, jak Śakjamuni, do zbawienia rodzaju ludzkiego, trzeba myśleć o wszystkich ludziach bez wyjątku; nie wolno myśleć jedynie o kilku uprzywilejowanych. Znosicie kasty, które zastajecie ustanowionymi, nie zatrzymując się wcale przy bezprawnych granicach, jakie one przepisują; to dobrze; lecz tworzycie sami inną kastę, która jest szeroka tylko z pozoru, a która w rzeczywistości pozostaje jeszcze ciaśniejsza niż tamte. Przez samą naturę rzeczy, myśl o zbawieniu, o ile nie ograniczy się jej w sprawiedliwych granicach, staje się niebezpieczna w stopniu równym swej fałszywości; jeśli ogarnia ona wszystkie czyny człowieka, psuje je; i, nie mówiąc już o złu, jakie może wyrządzić społeczeństwu, skaża duszę jednostki, która nie myśli już o nikim prócz siebie, i która, pomimo swej próżności wtajemniczonego i adepta, zapoznaje głęboko to, co winno być prawdziwym i jedynym motywem całego jej życia tutaj na dole.
+
+W istocie bowiem nie ma potrzeby przedstawiać ludzkiemu sumieniu, zwłaszcza gdy mieni się ono filozoficznym, innego motywu niż idea dobra. Nie jest to po prostu najbeinteresowniejsza i najszlachetniejsza z idei; jest to nadto idea najprawdziwsza i najpraktyczniejsza. O ile tylko człowiek zechce zstąpić w samego siebie, odnajduje ją na dnie swego serca jako żywą i nieomylną. Najczęściej, bez wiedzy o tym, to według niej reguluje on większą część swego postępowania. Jeśli zechcemy wznieść się aż do jej źródła, wiedzie nam ona do Boga, którego prawdziwą naturę nam objawia; jeśli pójdziemy za nią w jej konsekwencjach, wyjaśnia nam ona świat, który jako jedyna może dać zrozumieć. Umieszczona na szczycie idei najoczywistszych i najwyższych, to ona właśnie
+
+
+oświeca wszystkie inne, jako że to ona je rodzi. Otóż ta idea, która stanowi sam fundament naszej duszy, naszego rozumu, naszej inteligencji, tak jak jest fundamentem wszechświata i Boga, wcale nie pojawia się w buddyzmie. Śakjamuni nie wydaje się nawet domyślać jej istnienia. W filozofii greckiej Sokrates i Platon zyskali nieśmiertelną chwałę, dając idei dobra jej prawdziwe miejsce w duszy człowieka, w świecie i w Bogu. Ta pochodnia, raz zapalona ich rękami, nie przestała z dnia na dzień rzucać coraz więcej światła i blasku pośród nas. W buddyzmie przeciwnie, nie ukazał się ani jeden promyk tego boskiego płomienia; nie wytrysnęła zeń ani jedna trwała iskra; i to słońce inteligencji, jak je nazywa Platon, nigdy nie oświeciło serc świata buddyjskiego. Serca, dusze, umysły pozostały tam pogrążone w najgłębszych ciemnościach; a wieki, dalekie od rozproszenia tej mroczności, jedynie ją zagęściły. Idea nagrody, podstawiona w miejsce idei dobra, wszystko wypaczyła. Nieprzenikniona i mroczna zasłona została rozpostarta nad wszystkimi rzeczami; i człowiek nie mógł odtąd nic zrozumieć ani z samego siebie, ani z natury, w której żyje, ani z Boga, który stworzył jedno i drugie. Z tego pierwszego i zasadniczego błędu wypłynęło mnóstwo innych.
+
+Jedną z konsekwencji najpewniejszych i najbardziej fatalnych jest najpierw to, że gdy idea dobra została raz zapoznana, buddyzm tym samym zignorował ideę obowiązku. Rzecz dziwna! w systemie, gdzie słowo „obowiązek” (dharma) powtarza się w każdej linijce niezliczonych dzieł, które wydał, samo pojęcie obowiązku całkowicie się wymknęło. Widzi się tam wprawdzie posłuszeństwo
+
+
+
+
+prawu Buddy, ślepe podporządkowanie się jego naukom, szczery podziw dla jego cnót, które stara się naśladować. Lecz rada, rozkaz, nie zobowiązują moralnie; wszystko, co mogą uczynić, to przymusić zewnętrznie, a dopóki sumienie i rozum nie przemówiły, obowiązek się nie pojawia. Nie jest się związanym dlatego, że się słucha; nie jest się wcale zobowiązanym dlatego, że ugina się pod jarzmem, choćby to jarzmo było najrozsądniejsze i najbardziej zbawienne. To zatem do wewnętrznego trybunału, do samych wyroków sumienia moralny ustawodawca musi się zawsze zwracać, a zwłaszcza gdy sam siebie potępia, jak Śakjamuni, na obywanie się bez Boga, najwyższego źródła wszelkiego dobra i wszelkiego obowiązku. Inaczej czyni on być może żarliwych adeptów, i w razie potrzeby, bardzo wiernych poddanych; lecz nie czyni ludzi. Nie naucza on ani nie inspiruje cnoty; uczy co najwyżej roztropności. Kiedy młody Upagupta opiera się uwiedzeniom pięknej i bogatej kurtyzany, nie dzieje się to poprzez powiedzenie sobie, że wstrzemięźliwość jest obowiązkiem i że dobrze robi, walcząc z występnymi żądzami; dzieje się to z myślą, „że jest lepiej dla tych, którzy aspirują do wyzwolenia i którzy chcą uniknąć prawa odrodzenia, nie iść wcale do tej kobiety.” W ten sposób kalkuluje on swoje zbawienie; a ponieważ obawia się ryzyka ulegnięcia, powstrzymuje się, nie z cnoty, lecz z interesu. Nie zrozumiał zatem obowiązku, spełniając chwalebny czyn; nie jest wcale moralnie cnotliwy, pozostając zwycięzcą w tej delikatnej walce przeciwko samemu sobie. Wyznaję, że to już wiele, iż dobro się dzieje, jakikolwiek zresztą byłby motyw, którym akt się inspiruje. Lecz zasługa moralna jest rzeczywista i kompletna tylko wtedy, gdy sprawca kieruje się wyłącznie myślą o obowiązku, która w gruncie rzeczy jest tylko
+
+
+
+
+samą ideą dobra. Jednego i drugiego brakuje absolutnie w doktrynie Buddy.
+
+Można wskazać drugą konsekwencję nie mniej przykrą; jest nią sceptycyzm. Bez wątpienia nie jest on posunięty tak daleko w Sutrach z nauczania [Buddy], jak stało się to później w Pradźniaparamicie, która dochodzi do zanegowania naraz i przedmiotu poznawanego, i podmiotu poznającego, realności rzeczy i realności samego sumienia. Lecz nie upadając w tę ostateczność, Śakjamuni nie mniej stanowczo głosi marność i nicość wszystkich rzeczy w obliczu Nirwany, która jako jedyna w jego oczach jest niezmienna. „Wszystko jest próżnią” to jeden z jego ulubionych aksjomatów, na którym opiera z największą pewnością wyrzeczenie, jakie głosi ludziom. Z pewnością pośród zjawisk, w środku których musimy żyć, jest wiele takich, które są przemijające i niestałe. Jest ich bardzo niewiele, które byłyby trwałe i które nosiłyby „znamię stałości, ten prawdziwy znak Prawa,” jak mówił młody Siddhartha w swoich pierwszych medytacjach. Lecz wszystkie istoty nie są „próżne na zewnątrz, próżne wewnątrz,” jak sądził; i gdyby umiał zapytać samego siebie z nieco większą uwagą i ścisłością, znalazłby grunt solidny i niewzruszony, na którym człowiek może postawić niechybne kroki. Człowiek może zaprzeczyć wszystkiemu, co go otacza; może wątpić o wszystkich zjawiskach zewnętrznych, o części nawet zjawisk, które nosi w sobie. Lecz na próżno to czyni; nie może wątpić o własnym sumieniu, kiedy ono wyrzuca mu błąd, który popełnił, lub kiedy chwali go za dobro, które uczynił. Nie pyta on siebie być może, jak to twierdzi doktryna subtelniejsza jeszcze niż ta, czy zasada,
+
+
+
+
+w imię której działa, może stać się prawem powszechnym; lecz mówi sobie z pewnością, że powinien sam zawsze działać tak, jak działa, i że każda istota rozumna powinna działać jak on. Kiedy człowiek odnajduje w ten sposób porządek wewnątrz własnego serca, jest mu dość łatwo przenieść go na świat zewnętrzny; a dobro, które odkrył w swoim sumieniu, rozpoznaje jako również oczywiste i bardziej ogromne we wszechświecie, którym dobro samo rządzi i ożywia. Nie wierzy już odtąd w próżnię; a istoty zyskują dla niego substancję w samej proporcji ich udziału w dobrze. Wątpi o ich realności jedynie w takiej mierze, w jakiej oddalają się od niego [dobra] i na tej mocnej bazie, na której sam się postawił, wszystkie pojęcia jego inteligencji umacniają się w tym samym czasie, gdy się porządkują. Jeśli istnieją niektóre, które jeszcze się chwieją, to dlatego, że nie są warte trudu, by je obserwować lub by je utrwalać.
+
+Idea dobra usuwa zatem z duszy sceptycyzm. Nie tylko oświeca ona człowieka; lecz ponadto go umacnia. Wobec swojego sumienia, które mówi doń tak wysoko, przede wszystkim wtedy, gdy ono rozstrzyga przeciwko niemu, nie jest już kuszony, by wierzyć wraz z Śakjamunim jedynemu świadectwu swoich zmysłów; i bez odrzucania ich absolutnie, wie odtąd, jaki jest właściwy stopień zaufania, który jest im winien. Kiedy patrzy się tylko na świat materialny, można z całej siły zaprzeczać, by dobro lub zło się tam znajdowały; lecz kiedy człowiek patrzy na samego siebie, nie może odrzucić rozróżnienia na dobro i zło moralne, chyba że jego własna przewrotność uczyni go zbrodniczo interesownym.
+
+Moim zdaniem, to wyjaśnia bardzo dobrze charakter najbardziej uderzający buddyzmu i najbardziej bolesny ze wszystkich tych, które przedstawia on naszej obserwacji, chcę powiedzieć jego głęboką
+
+i nieuleczalny smutek. Kiedy nie wierzy się w dobro ani w człowieka, ani w świat, rzeczą całkiem prostą jest powziąć wstręt do jednego i drugiego i nie szukać schronienia nigdzie indziej, jak tylko w nicości. Stąd ten rozpaczliwy aspekt życia, który pod wszelkimi postaciami odnajduje się we wszystkich częściach tej doktryny i który nieustannie ją mroczy. Można by pomyśleć, że znajduje się w grobowcu; a kiedy buddyzm mówi o wyzwoleniu, mówi zawsze o Nirwanie, która przychodzi ostatecznie zniszczyć dla człowieka „to, co jest tylko wielką masą nieszczęść”. Skoro tylko poweźmie się o życiu taką opinię, wydaje się, że nie pozostaje już nic innego, jak tylko pozbyć się tego ohydnego ciężaru; i że samobójstwo jest jedynym wyjściem, jakie człowiekowi pozostaje w tej strasznej ostateczności. Więcej niż jedna legenda dowiodłaby nam, że nader często zwolennicy buddyzmu wyciągali tę konsekwencję, równie logiczną, co niedorzeczną. Lecz Śakjamuni, przez sprzeczność, która przynosi mu zaszczyt, chciał, aby człowiek obrócił swe życie na odkupienie samego życia poprzez cnotę. Chciał, aby chcąc przestać żyć na zawsze, zaczęto od życia według wszelkich praw rozumu, przynajmniej takich, jak on je rozumiał; i aby zdobywano śmierć wieczną przez egzystencję najczystszą i najświętszą. Ta wzniosła idea, jaką powziął o cnocie, jedynej rękojmi wiecznego zbawienia, powinna była, jak się zdaje, oświecić filozofa. Życie nie jest więc tak marną rzeczą, jak sądzi, skoro ostatecznie pozwala człowiekowi na ten podziwu godny użytek z jego władz. Lecz ciemności są zbyt gęste, aby to światło, jakkolwiek żywe, zdołało je przeniknąć i rozproszyć. Śakjamuni nie widzi w egzystencji nic prócz cierpienia; i po części z kompasji dla swych bliźnich, po części może też z osłabienia i z powrotu do
+
+
+samego siebie, poświęca wysiłki swego geniuszu na to, by wyrwać człowieka spod fatalnego prawa reinkarnacji.
+
+Lecz czyż nie rzekłoby się doprawdy, wierząc Buddzie, że życie jest tylko długim splotem boleści i cierpień? Niewątpliwie trzeba uznać liczne nieszczęścia, które ono w sobie zawiera i które je oszpecają; szaleństwem byłoby im zaprzeczać. Lecz, nie mówiąc o zbawiennych naukach, jakie człowiek może wyciągnąć z samego zła, które znosi, a którego nazbyt często jego przewrotna wola jest jedyną przyczyną, czyż to prawda, że w życiu nie ma nic prócz zła? A radości wszelkiego rodzaju, których ono nam przysparza, począwszy od naiwnych radości dzieciństwa, które samo siebie nie zna, aż po surowe radości dojrzałej refleksji, ugruntowanej na doświadczeniu, i sumienia umocnionego mądrością; począwszy od przyjemności zmysłów aż po rozkosze umysłu; począwszy od nieustannego i wspaniałego spektaklu natury aż po spektakl duszy, która poświęca się obowiązkowi; począwszy od uczuć rodzinnych aż po heroiczne namiętności patriotyzmu, których nawet same Indie nie były nieświadome, cóż z nimi począć? Czy zamierza się im również zaprzeczyć? Lecz jeśli bierze się tak bardzo pod uwagę nieszczęścia, czyż nie jest całkiem sprawiedliwie nie lekceważyć tylu dóbr niezaprzeczalnych? Czyż to znaczy sprawiedliwie oceniać rzeczy, gdy rozważa się je tylko pod jedną z dwóch przeciwstawnych stron, jakie prezentują?
+
+Nie byłoby również mądrze, przyznaję, zaprzeczać nieszczęściom życia równie energicznie, jak buddyzm je twierdzi. Lecz optymizm, jeśli nawet nie jest doskonale prawdziwy, jest bez porównania lepszy niż rozpacz. Podtrzymuje on przynajmniej męstwo, pokrzepiając je; jeśli podnosi nieco ducha, to go nie załamuje; wywyższa go zamiast degradować; daje mu z pewnością więcej
+
+
+światła niż teza przeciwna, ponieważ w życiu ludzkim i na świecie suma dobra przeważa nad sumą zła w oczach sędziów bezstronnych i serc nieco mężnych.
+
+Jest ponadto w tym jakaś nie wiedzieć jaka małoduszność, by myśleć tylko o nieszczęściach całkowicie zewnętrznych, jak starość, choroba i śmierć, a zapominać o innych nieszczęściach, daleko groźniejszych i straszliwszych w sobie i w swoich konsekwencjach, które atakują duszę i które nazywa się wadami. Buddyzm zadał sobie trud, w kazuistyce wyrafinowanej i uczonej, sklasyfikować z troską najdrobniejsze nawet odcienie Kleśa; to przez setki potrafił je rozróżnić. I po cóż cały ten trud? W gruncie rzeczy to nie wady buddyzm chce unikać i nie nią się brzydzi: to Nirwany poszukuje i to ją pragnie zdobyć; a ponieważ wada może przeszkodzić zbawieniu i wyzwoleniu, lęka się wady i odpycha ją tylko pośrednio. To, czego się lęka wyłącznie i nade wszystko, to cierpienie, które sprawia, że drży z trwogi wrażliwość mało mężna; to schyłek wieku, który niszczy piękne barwy młodości; to starość, która niszczy siły; to wreszcie śmierć, która jest wszakże tylko przejściem z tej egzystencji pełnej boleści do innej egzystencji jeszcze boleśniejszej. Tym, czego trzeba unikać za wszelką cenę, nawet za cenę cnoty, nie jest degradacja moralna będąca następstwem wady; jest to degradacja cielesna, która zamiast zasmucać mędrca, powinna by przeciwnie umacniać go, pouczając go. Niesprawiedliwością byłoby posuwać się aż do twierdzenia, że Śakjamuni wcale nie niepokoi się złem moralnym i że nie czyni zeń żadnego rachunku. Lecz to, co jest prawdą, to że podporządkowuje je
+
+
+tamtemu; i że zło fizyczne jest głównym przedmiotem jego obaw i jego trosk.
+
+I tutaj podziwiajcie sprzeczność! Oto, lękając się ponad miarę nieszczęść życia i szukając sposobu na wieczne wyzwolenie się z nich przez nicość jedyny środek, lub przynajmniej środek najbardziej skuteczny, jaki znajduje, by uleczyć się z egzystencji czyni z niej torturę i mękę podczas tych krótkich chwil, w których się ją posiada, nienawidząc jej. Cóż to za kodeks, jaki Śakjamuni narzuca swoim zwolennikom najmilszym i najwierniejszym! Jakież to praktyki przepisuje swoim zakonnikom i jakie on sam praktykuje! Łachmany i całuny jako odzienie, lasy jako schronienie, jałmużna jako pożywienie, cmentarze jako miejsce medytacji, najsurowsza wstrzemięźliwość, wyrzeczenie się wszelkich przyjemności, nawet tych najniewinniejszych, zazwyczaj milczenie, które oddala najdroższe rozmowy! To prawie już grób. Bez wątpienia sama surowość tej doktryny, która nie ogranicza się do klasztoru, lecz którą głosi się światu, dowodzi szczerego żaru wiary, która ją zaleca. Potrzeba wszakże silnego przekonania, by nakazać sobie tak bolesne i tak długie wyrzeczenia. Lecz jeśli życie jest już samo w sobie tak wielkim złem, po cóż pogarszać jeszcze to zło konieczne? Po cóż do tych nieuniknionych nieszczęść dodawać dobrowolnie te umartwienia, pod którymi ciało upada? Czyż nie byłoby konsekwentniej w doktrynie, którą się głosi, czynić z życia ciągłą uciechę, a w przyjemności widzieć jedyne zajęcie człowieka? Czyż nie należy raczej starać się łagodzić ból, zamiast go jeszcze drażnić? Prawdą jest, że nie trafia się do ludzi, głosząc im przyjemność; i że ta gnuśna doktryna, która może uwieść niektóre umysły
+
+zepsutych, nie jest stworzona do pociągania tłumów, jakkolwiek byłyby one nieświadome i zmysłowe. Śakjamuni miał rację, nie zniżając się do tej podłości, którą jego wielka dusza by odrzuciła; lecz ascetyzm nie był zastosowaniem, jakie powinien był logicznie wyprowadzić ze swoich zasad.
+
+Tak oto: nieznajomość pojęcia dobra; ślepy egoizm; absolutne lekceważenie obowiązku; sceptycyzm niemal powszechny; fanatyczna odraza do życia, którego się nie rozumie; małoduszność wobec jego cierpień; nieutulony smutek w świecie, którego się nie pojmuje oto już niemało błędów; lecz buddyzm popełnia jeszcze znacznie większe.
+
+Jest rzeczą wystarczająco dowiedzioną, że prawdziwa natura człowieka całkowicie mu umknęła; oraz że ustanawiając przeciwko ciału nieustanną i nieubłaganą walkę, nie działał on bynajmniej z korzyścią dla duszy. Nie odróżnia on duszy od ciała ani ducha od materii. Redukując całą inteligencję do zewnętrznej wrażliwości, nie wydaje się nawet podejrzewać istnienia w człowieku owych dwóch pierwiastków, które go składają i które tłumaczą całe jego przeznaczenie. Sankhja przynajmniej nakreśliła głęboko to zasadnicze rozgraniczenie; i choć myliła się co do następstw, jakie z tego wynikają, przyznała duchowi szerokie miejsce, nie oddając mu zresztą należnej mu w pełni roli. Śakjamuni stoi pod tym względem znacznie poniżej Kapili. Pozostaje ateistą tak jak on; lecz zamiast zdecydowanego, choć bękarciego spirytualizmu, wprowadza on, zwracając się do wielości, ślepy materializm, który sprzęga z najwytworniejszymi ascetycznymi rygorami.
+
+Nie tylko miesza on w człowieku dwa tak przeciwne pierwiastki, które go tworzą; miesza ponadto
+
+
+samego człowieka ze wszystkim, co go otacza. Miesza go najpierw ze zwierzętami, które mu służą, a które niekiedy go szarpią, gdy przed nimi nie ucieka; z roślinami, które go żywią, a niekiedy zatruwają; wreszcie rzecz niemal niewiarygodna! z materią surową, w której nie ma już śladu organizacji ani życia, a którą człowiek kształtuje wedle swej woli, gdy zechce przyłożyć do niej swe pracowite dłonie. Tak, idea transmigracji posuwa się u Śakjamuniego aż do tego stopnia, to znaczy aż do najjaskrawszej potworności. Istnieją pośród nas doktryny, które poniżają człowieka do poziomu zwierzęcia i które chcą w nim widzieć jedynie zwierzę nieco doskonalsze od innych. To już i tak posuwanie lekceważenia dość daleko; to już postrzeganie bardzo źle i bardzo powierzchownie. Lecz czymże jest ten błąd, acz poważny, w porównaniu z tym, w który popada buddyzm? Człowiek, według niego, nie różni się niczym od najpodlejszej materii. W kolejnych i nieskończonych żywotach, jakie może przejść, może stać się wszystkimi rzeczami bez wyjątku: od istot najwyżej rozwiniętych aż po najbardziej bezkształtne; od najwspanialszej i najbardziej złożonej organizacji aż po zupełny brak wszelkiej organizacji. Gdyby teksty nie były tak formalne i tak liczne, gdyby ta wiara nie pozostawała w doskonałej zgodzie z całą resztą systemu, który ją zakłada i nie może się bez niej obejść, wątpiono by doprawdy, czy paradoks tego rodzaju zdołał kiedykolwiek uwieść ludzkie umysły.
+
+Lecz niestety wątpliwość nie jest dozwolona, jak to wykazałem. Jest to idea jedności substancji posunięta tak daleko, jak to tylko możliwe, w całym swoim zasięgu i w całej swojej niedorzeczności. Spinoza i nasi współcześni panteiści, którzy uważają się bez wątpienia za nader śmiałych
+
+
+i nader konsekwentnych, są nimi o wiele mniej niż Śakjamuni. On idzie do samego końca swoich idei, podczas gdy oni widzą zaledwie część swoich i zatrzymują się w pół drogi. Za sprawą swego rodzaju instynktu, który daje im odczuć otwierającą się przed nimi przepaść, cofają się, sami o tym nie wiedząc; i choć nie oddają człowiekowi należnej mu części w swoich systemach, gdzie wszystkie istoty zacierają się i mieszają w mglistej tożsamości, nie śmią wyznać owych poniżających bluźnierstw, w których lubuje się buddyzm. Prawdą jest, że pod innym względem postępują niemal tak samo jak on, nie chcąc uznać innego Boga poza samym człowiekiem. Lecz w naszych czasach te bezbożne ekstrawagancje są mniej łatwe; od dawna bowiem ma się za sobą, jeśli chodzi o duszę ludzką, filozofię platońską i metodę Kartezjusza, a żyje się w łonie cywilizacji chrześcijańskiej. Można jeszcze nie chcieć wiedzieć o wszystkim, czego uczy psychologia, i próbować, jeśli nie ją obalić, to przynajmniej wymknąć się jej, udając, że się jej nie zna. Lecz na nic się nie zda kroczenie tą pożałowania godną drogą, zdrowy rozsądek się opiera; błądzący filozof czuje mgliście błąd, w którym się gubi; jego własne sumienie, protestując przeciwko niemu, odbiera jego systemowi część siły; a jego zachwiane przekonanie zaledwie wystarcza, by zapanować nad nim samym, dalekie od zdolności pociągnięcia innych. Lecz w świecie indyjskim, gdzie prawdziwa nauka nigdy nie była znana, gdzie psychologia pozostała głęboko ignorowana, nawet przez braminów, jakkolwiek byliby oni spekulatywni, wszelkie aberracje, wszelkie szaleństwa były możliwe; i potrzeba było jedynie energii i determinacji ducha, aby doprowadzić je do ostateczności. On szedł, a nic nie mogło go zatrzymać, tak daleko, jak wiodła go logika; a ponieważ obserwacja psychologiczna
+pozostawała dla niego zamknięta jeszcze bardziej niż dla jego przeciwników, nie dostrzegał żadnego z błędów, czy raczej niedorzeczności, w które popadał. Nic nie przewyższyło wielkości jego przekonania, prócz wielkości jego zaślepienia.
+
+Sądzę, że dość łatwo jest teraz zrozumieć, dlaczego buddyzm jest z konieczności ateistyczny. Gdy w tym stopniu nie uznaje się osobowości człowieka, jest rzeczą absolutnie niemożliwą ukształtować sobie najmniejsze pojęcie o Bogu. Ta ostatnia strona doktryny Śakjamuniego zasługuje na to, byśmy zatrzymali się przy niej jeszcze przez kilka chwil; jest ona bez porównania najsmutniejsza ze wszystkich. Lecz nasz rozbiór musi dojść aż do zbadania tych ran ludzkiego ducha; odwracanie od nich oczu nie byłoby działaniem wystarczającym, by podjąć próbę ich uleczenia.
+
+Jak już powiedziałem, jest to rzecz nader osobliwa i nader pożałowania godna, lecz jest to fakt niezaprzeczalny: w całym buddyzmie nie ma śladu idei Boga. To wielkie pojęcie, z którejkolwiek strony by je ująć, całkowicie mu umknęło. Nie tyle je wyraźnie zanegował ani z nim walczył; lecz nie wydawał się wcale przypuszczać, by istniało ono w duszy ludzkiej i by było dla niej niezbędne. Zignorował je w sposób najbardziej bezwzględny.
+
+Braminizm, przynajmniej pod tym względem, stoi o wiele wyżej i jest o wiele bardziej uczony. Jeśli nawet nie pojął od razu jedności Boga, szukał jej bezustannie pod postacią uniwersalnego ducha świata; a ta troska, która nie opuszcza go ani na chwilę, pozwala mu niekiedy dostrzec prawdziwe światło. W niektórych hymnach Wedów, a zwłaszcza w niektórych Upaniszadach, widać geniusz bramiński będący o krok od dokonania tego wielkiego odkrycia rozumu. Przeczuwa ją; dotyka jej, i gdyby trzymać się tylko jego języka [słów], można by pomyśleć niekiedy, że posiada on całą prawdę. Jeśli jeszcze jej nie ma, znajduje się jednak na drodze, na której się ją spotyka, i można mieć nadzieję, dzięki tym jasnym, choć ulotnym blaskom, że nie umknie mu ona na długo.
+
+W buddyzmie, przeciwnie, owe blaski są całkowicie zagaszone; i ani jedna iskra nie wskazuje, by mogły się rozbudzić i odżyć na nowo. Wszystko jest ciemnością; a człowiek, sprowadzony do samego siebie, czuje się tak słaby i tak opuszczony, że rzuca się z pewnego rodzaju szaleństwem w śmierć i w nicość, z której wyszedł i do której spieszy powrócić.
+
+Widok to rozdzierający i nader zdatny do wzbudzenia najboleśniejszych refleksji! Przywykliśmy przypuszczać, że pojęcie Boga nigdy nie brakuje, w tym czy innym stopniu, ludzkiemu rozumowi. „Pojęcie to może być mętne i ciemne mówiliśmy sobie lecz nie jest zgoła nieobecne”, i wyobrażaliśmy sobie, że odnajdziemy je aż w brutalnej prostocie ludów najdzikszych. Otóż oto wielka doktryna, owoc najdłuższych i najszczerszych medytacji; oto system filozoficzny, jeśli nie nazbyt głęboki, to przynajmniej nader konsekwentny i nader rozległy; oto religia przyjęta i praktykowana przez niezliczone narody, w której to istotne pojęcie, które wydawało nam się niezatarte, nie pojawia się nawet w swoim najbardziej zatartym odcieniu, i gdzie człowiek zatraca się tak absolutnie w swoim egoizmie i swoich dziecięcych trwogach, że nie widzi absolutnie nic poza samym sobą. Wierzy w swoje nieszczęście ze wszystkimi siłami swojej słabości; a chcąc się odeń wyzwolić, nie odwołuje się do nikogo innego, jak tylko do siebie samego, tak nędznego, jakim jest. Byłoby rzeczą cudowną, gdyby buddyzm na takiej drodze dopłynął do portu; a kiedy się
+
+
+wspomni, skąd wyrusza, nie ma powodu się dziwić, że dotarł do otchłani.
+
+Osoba ludzka została przezeń zapoznana w swoich znakach najbardziej zewnętrznych i najbardziej oczywistych. Lecz została ona jeszcze haniebniej zapoznana w swojej naturze intymnej i w swojej istocie¹. Wolność, która jest jej cechą wybitną, wraz z całym orszakiem władz i konsekwencji, które jej towarzyszą, zostaje zapomniana, zniesiona, zniszczona.
+
+Człowiek działa przez całe to życie pod ciężarem nie dokładnie fatalizmu, lecz egzystencji uprzednich, których dostarczył nieobliczalną serię. Nie jest on ani karany za zło, ani nagradzany za dobro aktualne, które czyni; spłaca on tutaj, na dole, dług życia przeszłego, którego nie może naprawić, którego ponosi konieczne skutki i o którym nie pamięta, choć może uznawać jego zgubne następstwa. Transmigracja ściga go w życiu obecnym; i jeśli nie ma się na baczności, pochwyci go ona znowu, by wrzucić go ponownie w krąg, który już przebył, a z którego nie zdoła wyjść. To prawda, że wydaje się on zależeć od siebie samego, by usłuchać Buddy i zbawić się za jego głosem, lub też zamknąć ucho i zgubić się. Lecz ta sama opcja, jedyny punkt, w którym człowiek wydaje się jeszcze wolny, jest mu ledwie przyznana; jego wolność nie jest całkowita w tym decydującym wyborze; krępuje ją przeszłość, którą już nie dysponuje; a zatwardziałość wobec prawa wyzwalającego, które mu się głosi, może być karą za błędy niegdyś popełnione, a która
+
+¹ W sutrze palijskiej poświęconej specjalnie wyłożeniu teorii przyczyn, Mahânidâna Soutta, powiedziane jest we własnych słowach: „To jest imię i kształt, przez które indywiduum się poznaje.” Lotus de la bonne Loi M. E. Burnouf, s. 359.
+
+
+pociąga za sobą nowy błąd. Człowiek nie jest zatem wolny w tym życiu. Czyż był nim kiedykolwiek? Czy zależało od niego na początku rzeczy rozpoczęcie lub nierozpoczęcie tego łańcucha sukcesywnych egzystencji? Co sprawiło, że upadł po raz pierwszy pod ciosem tego straszliwego prawa?
+
+Na wszystkie te pytania buddyzm wierzy, że odpowiada ową sławną i dziecięcą teorią łańcucha współzależnych przyczyn o charakterze wzajemnym. Ze stopnia na stopień, cofa się on od śmierci, której tutaj, na dole, jesteśmy poddani, aż do nicości, z której każe wychodzić istotom, czy raczej cieniom, które uznaje na tym świecie. Bez wątpienia, to narodziny rodzą starość i śmierć; i choćby ten aksjomat mógł wydać się naiwny, trzeba przyznać, że gdybyśmy się zgoła nie narodzili, nie bylibyśmy wcale wystawieni na śmierć. Lecz to igrać ze słowami, mówiąc, że życie jest przyczyną śmierci; nie jest ono wszakże jej okazją. Bez wątpienia raz jeszcze, gdybyśmy się nie narodzili, nie umarlibyśmy; lecz życie jest tak mało przyczyną śmierci, że uznajecie śmierć z kolei za przyczynę życia. Przyczyna staje się skutkiem; a ten skutek staje się swoją własną przyczyną; to znaczy, że w gruncie rzeczy sami sobie przeczycie i że prawdziwe pojęcie przyczyny wymyka się wam, tak jak wymknęło się wam pojęcie wolności. Sam buddyzm wydaje się tutaj czynić wyznanie bezsilności; i w tej drabinie, którą przebiega, wstępując lub zstępując według swej woli, to od nicości lub ignorancji zaczyna, to na ignorancji lub nicości kończy. Lecz jeśli ignorancja jest punktem wyjścia waszych badań i jeśli ona jest ich kresem, wolno jest doprawdy wątpić w waszą rzekomą naukę; jeśli wychodzicie z nicości
+
+
+by dojść jeszcze do nicości, lepiej byłoby wyznać, że nic nie wiecie i że w nic nie wierzycie. To właśnie uczyniła później szkoła Pradżniaparamity, bardziej śmiała w swoim nihilizmie i bardziej konsekwentna niż sam założywca buddyzmu. Lecz Śakjamuni nie odważył się tego powiedzieć, lub raczej nadużył samego siebie, oszukując innych.
+
+Tym samym, żadna idea osobowości ludzkiej, żadna idea wolności, żadna idea przyczyny oto elementy, którymi buddyzm się posługuje i które wierzy, że zaczerpnął z dokładnej i uważnej obserwacji rzeczywistości. Że z takich materiałów nie próbował nawet wznieść gmachu teodycei, nic w tym nie powinno nas dziwić. Kiedy rozumie się człowieka tak niedoskonale, chociaż stawia się go bezustannie przed naszymi oczami i chociaż nosi się go w samym sobie, jest rzeczą zupełnie prostą, że rozumie się również źle świat, który bada się jeszcze mniej, i że ignoruje się Boga, którego człowiek w istocie może zrozumieć jedynie z pomocą samego siebie i świata.
+
+Lecz tym, co powinno dziwić poniekąd, i co nie jest mniej osobliwe niż cała reszta, jest to, że buddyzm nie ubóstwił Buddy. Pozbawiony prawdziwej idei Boga, mógł próbować dokonać tej zmiany; i prowadzony przez tajemny instynkt, przed którym rozum ludzki nigdy nie wyzwala się absolutnie, mógł na miejsce bóstwa podstawić idola. Daleki od tego, Budda pozostaje człowiekiem i nie szuka nigdy przekraczania granic ludzkości, poza którymi niczego nie poczyna. Entuzjazm jego uczniów był tak samo powściągliwy jak on sam; w niewinnym kulcie, który mu oddawali, ich żarliwość zwracała się ku wspomnieniu pocieszającemu i krzepiącemu; nigdy
+
+ich interesowny przesąd nie zwracał się do jego potęgi. Budda postawił samego siebie, a raczej postawił człowieka, daleko wyżej ponad wszystkimi niedorzecznymi i okrutnymi bogami panteonu bramińskiego; jego wyznawcy zachowali dla niego to zaszczytne i najwyższe miejsce; nie poszli jednak dalej. Ani duma Śakjamuniego, ani fanatyzm wierzących nie powzięły myśli o świętokradztwie; Budda, jakkolwiek wielkim by się nie mienił, wcale nie zaryzykował apoteozy; i sama tradycja, jakkolwiek pobożną by nie była, jakkolwiek żarliwą w swoich uwielbieniach, również nie zaryzykowała jej dla niego. Świątynie i posągi były mu hojnie ofiarowywane. Tysiące dzieł poświęcono opowiadaniu o jego życiu, a nawet wysławianiu jego nadprzyrodzonej potęgi; lecz nikomu nigdy nie przyszło na myśl uczynić z niego boga.
+
+Nie należałoby jednak przypisywać zasługi tego powściągu zdrowemu rozsądkowi ludów buddyjskich. Jeśli okazały się one tak mądre w tym delikatnym punkcie, to z powodów dość prostych, których rozum wcale nie dyktował, a które zresztą nazbyt dobrze zgadzają się z zaślepieniem, jakiego ludy te dały smutne widowisko. W ich wierzeniu Budda jest tak daleki od bycia Bogiem, że został poprzedzony przez kilku innych Buddów, równie świętych jak on, i że będzie miał za następców innych Buddów, nie mniej doskonałych i nie mniej czcigodnych. Zbawił on wszechświat swoją doktryną, lecz jest to wszechświat, w którym się pojawił, tak jak inni zbawili lub zbawią wszechświat, którego będą lub byli przewodnikami. Czyż sam Tathagata nie przepowiedział tłumowi swoich słuchaczy przeznaczeń nie mniej świetnych niż jego własne? Czyż nie nauczył ich, że będą Buddami tak samo jak on? Czyż nie opisał im punkt po punkcie światów
+
+
+
+
+wspaniałych, w których będą panować? Czyż nie określił czasu trwania ich panowania? Każdy człowiek może zatem, tak jak sam Budda, dojść przez cnotę i świętość do tej wysokiej godności, i jakkolwiek godnym uwielbienia byłby Budda, jakkolwiek niewyrażalne byłyby jego przymioty, nie ma takiego ucznia, choćby najciemniejszego, jakiego można przypuścić, który nie mógłby ich osiągnąć i mu dorównać. Gdyby Budda był Bogiem, przypadkiem, istniałoby tyluż bogów możliwych, ilu jest ludzi zdolnych pojąć „cztery wzniosłe prawdy lub powiązany łańcuch przyczyn wzajemnych, i iść Ścieżką o ośmiu częściach, która prowadzi do Nirwany”.
+
+Oto pierwszy powód, który powstrzymał buddystów, pomimo najtrwalszej i najszczerszej pobożności, przed uczynieniem z Buddy boga. Oto drugi, który, choć równie potężny, nie jest wcale bardziej zaszczytny dla ich rozumu.
+
+Jest prawdą, że Budda przez całe swoje życie, po wielkim triumfie pod Bodhimanda, nie przestawał czynić cudów, i że moce najbardziej nadzwyczajne i najbardziej nadprzyrodzone stały się jego udziałem. Lecz najpierw bramini, jego przeciwnicy, walczyli z nim i czynili popis cudowności. Nie był to więc wyłączny przywilej Śakjamuniego. Był on silniejszy od tych, z którymi walczył, ponieważ jego wiedza była większa niż ich. Przewyższał ich potęgą, ponieważ przewyższał ich cnotą. A poza tym, czyż nie wiadomo, że wiedza nadaje człowiekowi moce nadludzkie? Czyż nie wiadomo, że Jogin, kiedy przeszedł przez wszystkie stopnie wtajemniczenia, dochodzi niechybnie do władzy magicznej i że odtąd stoi ponad wszystkimi
+
+
+
+
+warunkami natury? Najbardziej oświecony braminizm zawsze żywił to niezłomne przekonanie; najmędrsze systemy filozoficzne je szerzyły; wszyscy w Indiach w to wierzą, i buddyzm, gdyby je odrzucił, postawiłby się przez to samo daleko poniżej swoich antagonistów. Cuda Buddy nie mają zatem niczego, co by ga wyróżniało. Dane jest wszystkim ludziom dojść do czynienia nie mniej zdumiewających. Z tego tytułu nie jest on bardziej Bogiem, niż ktokolwiek inny.
+
+Stało się tak, jak widać, przez poczucie dumy całkowicie spójne i przez bezrozumny przesąd, że buddyzm został przywiedzion do tego, by nie przebóstwiać Buddy, nie mówiąc już o jego nieprzejednanej niezdolności do powzięcia jakiegokolwiek pojęcia o istocie nieskończonej.
+
+Po tym wszystkim, co poprzedza, można już teraz zdać sobie sprawę dość dobrze z ogólnego przedsięwzięcia buddyzmu. Przez radykalną niezdolność do wzniesienia się wyżej, lub przez przewrotność rozumu, nie żądał on, aby zrozumieć i zbawić człowieka, niczego więcej niż samego człowieka. Uczynił z niego największą z istot, w czym nie pomylił się, jeśli chciał trzymać się tego świata; lecz uczynił z niego istotę samą przez się istniejącą, niemającą wyższego ani dla swego początku, ani dla swego końca, umieszczoną samotnie w tym wszechświecie, który napełnia swoją osobowością mglistą i wszędzie rozproszoną pod najbardziej sprzecznymi postaciami, zajmującą się wyłącznie sobą i niemyślącą ani o naturze, z którą zlewa się w swoich nieskończonych metamorfozach, ani o Bogu, którego nie zna. Nie mówię, że tej idei brakuje pewnej pozornej wielkości; mówię jednak, że brakuje jej prawdy i że człowiek tak pojęty jest tylko potworem, który pomimo swoich roszczeń,
+
+
+
+
+wkrótce przejmie samego siebie zgrozą, ponieważ nie zdoła samego siebie zrozumieć.
+
+Lecz nie byłoby wcale sprawiedliwe zwalczać buddyzm teodyceą Platona czy Kartezjusza, to znaczy światłem ludów i czasów bardziej uprzywilejowanych. Trzeba użyć przeciwko niemu tylko jego własnej broni; a skoro z cierpienia uczynił człowieka w całości, trzeba zobaczyć, czym jest cierpienie w człowieku i co ono zakłada. Tą drogą, jak każdą inną, możliwe jest człowiekowi dojść do Boga. Droga ta jest bardziej uciążliwa dla naszej słabości; lecz nie jest mniej pewna, i Bóg jaśnieje nie mniej w nieszczęściach niż w dobrach ludzkości.
+
+Zarzucałem wyżej Śakjamuniemu, że poświęcił zbyt wiele uwagi cierpieniu fizycznemu; lecz powiedziałem także, iż przyznał on pewną część cierpieniu moralnemu. Chce on wyzwolić człowieka na zawsze od choroby, starości i śmierci, uwalniając go od prawa odradzania się; lecz chce go także wyrwać wadzie. Nie przeczy więc temu, że jeśli człowiek cierpi w swoim ciele, może cierpieć również, i to jeszcze żywiej, w innej części swojej istoty. Klesza obejmuje w swoim rozległym zakresie zło cielesne i zło moralne; a kiedy Adżatasatru przychodzi wyznać samemu Buddzie swoją zbrodnię ojcobójstwa, to dlatego, że jest on szarpany przez wyrzuty sumienia. Powierza on tajemnicę swoich mąk mędrcowi, który ma go pocieszyć i uleczyć. W ten sposób buddyzm uznaje cierpienie pod jego postacią najbardziej przejmującą i najprawdziwszą, choć najmniej widoczną i najbardziej ukrytą. Tylko że nalega on zbyt mało na to wielkie spostrzeżenie, które mogło mu objawić całą naturę człowieka i wznieść go
+
+zarazem wyższym niż sam człowiek.
+Można o to zapytać buddyzm. Czy istnieje na świecie istota inna niż człowiek, która mogłaby doświadczać owych cierpień, jakie sumienie nakłada nań w pewnych przypadkach, a które dobrze znacie, skoro podejmujecie się je uśmierzać swoimi radami i uroczystymi ekspiacjami, które zalecacie? Czy sądzicie, że istoty otaczające człowieka znoszą tak jak on te katusze wewnętrzne, przed którymi najpotężniejsi z królów, całkowicie upewnieni o swej bezkarności, zgoła nie potrafią się uchylić? Przyznaje się wam, jeśli tego żądacie, że człowiek, zanim przybrał swą obecną formę, przeszedł przez wszystkie stany materii, od najgłębiej bezwładnej aż do najlepiej zorganizowanej; lecz w obecnym porządku rzeczy, czy zaprzeczycie, że człowiek jest jedynym, który znosi te udręki, będące następstwem jego błędów, a niekiedy i jego zbrodni? Czy sądzicie, że zwierzęta odczuwają je tak jak on? Czy sądzicie, że materia nieożywiona, którą sami umieszczacie poniżej zwierząt, mogłaby je również odczuwać? Bez wątpienia nie: i mimo wszystkich waszych zaślepień, nie zniżyliście się aż do tego stopnia. Człowiek ma zatem przywilej owego cierpienia, które należy wyłącznie do niego. Jest to fakt, któremu nie sposób zaprzeczyć; można nad nim ubolewać, tak jak ubolewa się nad starością i śmiercią; lecz nie można powiedzieć, że on nie istnieje.
+Skądże pochodzi to cierpienie u człowieka i co je w nim sprawia, gdy dochodzi ono do tego, że wstrząsa całą jego istotą, zatruwa wszystkie jego radości i przywodzi go do agonii pośród wszelkich upojeń władzy? Wy sami odpowiadacie na to pytanie: „Człowiek doświadcza tych straszliwych cierpień tylko dlatego, że czuje się winnym
+
+
+występku przeciwko Prawu”. Gdyby nie mówił sobie wcale, że powinien był i mógł postąpić inaczej, niż postąpił, nie miałby wcale wyrzutów sumienia, które przywodzą go do waszych stóp, pokornego i uległego, pomimo jego pychy i całej jego potęgi. Lecz to prawo, które złamał i które go karze, to nie wyście je dla niego ustanowili; albowiem ów wielki winowajca, kiedy zaczął żałować, nie znał was wcale i nie wiedział, że zabroniliście zabójstwa. Tym mniej jeszcze jest nim ów winowajca sam dla siebie, który ustanowił prawo, którego sprawiedliwa kara go przytłacza. Daleki od ogłoszenia go przeciwko samemu sobie, zniszczyłby je, gdyby zniesienie go leżało w jego mocy. Zatarłby, gdyby to tylko od niego zależało, nawet wspomnienie o swoim błędzie, aby uleczyć zarazem rany, które to wspomnienie mu zadaje i otwiera bezustannie na nowo. Lecz to prawo jest wyższe od człowieka; ono nie zależy od niego; i na przekór całej jego przewrotności, która niekiedy mu się urąga, nie może on uciszyć we własnym sercu tego nieubłaganego głosu, który idzie snadź szukać echa w niemniej zatrważających echach w sercu jemu podobnych.
+Wiem dobrze, co buddyzm odpowie, jeśli nie ustami Śakjamuniego, to przynajmniej Nagarndżuny, autora Pradżniaparamity, że: „jeśli człowiek doświadcza cierpień moralnych tego rzędu, to dzieje się tak z tej jedynej przyczyny, że tak już jest; taka jest jego natura (Swabhawa); że nie ma potrzeby szukać innego wyjaśnienia; że istoty są tym, czym są z własnej swej natury; że człowiek ma swoją, tak jak zwierzęta, rośliny i minerały mają swoją, i wreszcie, że chęć wychodzenia poza to jest bezużyteczna”. Ta odpowiedź nie wyjaśnia niczego w gruncie rzeczy, właśnie dlatego, że odmawia wyjaśnienia czegokolwiek; jest to uniwersalne odrzucenie wniosku. Trzeba się ograniczyć
+
+
+do obserwowania faktów, nigdy nie roszcząc sobie prawa do docierania aż do ich przyczyny. Cierpienie moralne, które następuje po zbrodni, jest faktem, buddyzm to przyznaje, i ustami swej największej szkoły metafizycznej oświadcza, że na tym poprzestaje, oraz że nie pyta wcale, skąd ten fakt pochodzi i jakie jest jego źródło. Lecz buddyzm na próżno zasłania się tym łatwym argumentem, sam bowiem odmówił sobie tej nazbyt wygodnej wykrętności. Odpowiedź ta mogłaby być zdatna do użytku dla sceptycyzmu uczniów, którzy z nauk mistrza zaczerpnęli tylko najgorszą część, i którzy trzymają się najbardziej suchej logiki; lecz mistrz nie może jej przyjąć; nie przeszedł on wcale z tą wyniosłą obojętnością wobec cierpienia moralnego, i daleki od widzenia w nim skutku własnej natury człowieka to znaczy skutku niezmiennego włożył swe najpilniejsze starania i swą najszlachetniejszą nadzieję w uleczenie owych nieszczęść, których nie uważał wcale za nieuleczalne. Uznał on zatem nie tylko to, że człowiek gwałci prawo wyższe od niego, gdy popełnia błąd, lecz ponadto, że może on w pewien sposób naprawić popełnione zło i odbudować między sobą a owym zgwałconym prawem stosunek, który zerwała jego zbrodnia. Buddzie pozostawał już tylko jeden krok do zrobienia: polegał on na przypisaniu tego prawa, którego cnotę uznawał skądinąd za sprawiedliwą, istocie potężniejszej od człowieka, istocie będącej przyjacielem porządku i dobra, która potrafi je objawiać i utrzymywać za pomocą owych tajnych i skutecznych środków.
+Wydaje się nawet, że Budda mógł pójść jeszcze nieco dalej tą drogą. Musiał on jedynie zapytać swą duszę heroiczną i cnotliwą oraz porównać głęboki i niezłomny pokój, jakim cieszył się w swoim sumieniu, z burzami, którymi jak widział miotana była dusza winowajców. Ów spokój dobrych wobec prawa, które wypełniają,
+
+
+był faktem nie mniej pewnym niż niepokój złych. Sam Budda osobiście był tego zachwycającym przykładem. Mógł zatem powiedzieć sobie, że jeśli twórca prawa moralnego karze zło, to nagradza również dobro, i że jego łaskawość dorównuje przynajmniej jego surowości.
+Te proste refleksje nad cierpieniem moralnym nie przekraczały z pewnością geniuszu Śakjamuniego; a gdyby był ich dokonał, byłyby one z natury swej zmieniły cały bieg jego myśli i przekształciły cały jego system. Tą drogą, nie mówiąc już o tylu innych korzyściach, jakie mógł mu zaofiarować spektakl natury zewnętrznej, doszedłby do lepszego zrozumienia człowieka; doszedłby przede wszystkim do uciszenia owej trwogi, która oślepia człowieka i wtrąca go w rozpacz. W obliczu Istoty Wszechmogącej, która jest sprawiedliwa i która potrafi być zarazem pełna życzliwości i surowa, jego dusza poczułaby się uspokojona. Daleki od widzenia w życiu katuszy, uznałby w nim próbę, od nas samych zależną, by uczynić ją mniej bolesną. Człowiek nie musiałby wcale ubolewać nad swą kondycją tu na dole, skoro może ją ulepszyć i upiększyć. Nie jest on zagubiony w tym wszechświecie, skoro czuje się pod jarzmem praw rozumnych i dobroczynnych. Zostało mu dane poddać się im i je zrozumieć. Jeśli może je pogwałcić, może również się z nimi sprzymierzyć, będąc im posłusznym. Co więcej, może on w pewnej mierze sprzymierzyć się z Tym, który je ustanowił i który mu je objawia również przez cnotę i przez zbrodnię. Nie jest to zatem władca absolutny czy tyran, do którego zwraca się serce człowieka; jest to raczej ojciec, i można powiedzieć, że daleki od bycia zabłąkanym czy sierotą na tym świecie, może on w nim żyć jak w rozległej rodzinie, gdzie zajmuje zaszczytne miejsce, jako że jest w niej drugim po ojcu.
+
+Lecz ta strona rzeczy, która jest nie tylko najważniejsza, ale i najprawdziwsza, nie poruszyła Siakjamuniego. Dostrzegał on w człowieku jedynie stronę nędzną i oddał się bez miary bolesnemu współczuciu, jakie budził w nim ten żałosny widok. Ponieważ człowiek umiera tutaj na dole, po tym jak mniej lub bardziej dobrze żył, potępił go on na wieczną śmierć. Nadzieja nicości wydała mu się wystarczająca dla tej istoty zaprzątniętej wyłącznie troską o uniknięcie cierpienia. Cierpi się, skoro tylko się istnieje, a jedynym sposobem, by nie cierpieć, jest nie istnieć. Nirwana jest jedynym pewnym schronieniem; człowiek jest całkowicie pewien, że już nie powróci, z chwilą gdy istnieć przestanie.
+</div>
+
+<div class="container">
+
+</div>
+</body>
+</html>

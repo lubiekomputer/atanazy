@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>...
+</title>
+    <link rel="stylesheet" href="mot.css">
+
+    <script>
+        const audio = document.getElementById('bgMusic');
+        audio.play().catch(() => {
+            document.addEventListener('click', () => {
+                audio.play();
+            }, { once: true });
+        });
+    </script>
+    <style>
+        body {
+            position: relative;
+            background-color: #000;
+        }
+
+        /* nadpisz body::before z mot.css — wyłącz miganie, zostaw linie skanów bez animacji */
+        body::before {
+            animation: none !important;
+            opacity: 0.18 !important;
+        }
+
+        /* obraz w tle przez ::after żeby nie kolidować z CRT z mot.css */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url('hegel/crucified-christ-1896.jpg');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            opacity: 0.35;
+            filter: brightness(0.9) contrast(1.05) saturate(1.2) sepia(0.3) hue-rotate(-5deg);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        body > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* czarne tło tylko bezpośrednio za tekstem */
+        .file-name,
+        .file-entry a {
+            background: rgba(0, 0, 0, 0.82);
+            padding: 1px 5px;
+            display: inline;
+            box-decoration-break: clone;
+            -webkit-box-decoration-break: clone;
+        }
+
+        nav a {
+            background: rgba(0, 0, 0, 0.82);
+            padding: 0 3px;
+        }
+
+        .board-title {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.82);
+            padding: 0 5px;
+        }
+
+        .files-grid > div[style*="primary"] {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.82);
+            padding: 0 4px;
+        }
+
+        footer span,
+        footer {
+            background: transparent;
+        }
+
+        #music-btn {
+            position: fixed;
+            top: 12px;
+            right: 12px;
+            background: rgba(0,0,0,0.85);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            font-family: inherit;
+            font-size: 12px;
+            padding: 4px 8px;
+            cursor: pointer;
+            z-index: 9999;
+            opacity: 0.7;
+        }
+        #music-btn:hover { opacity: 1; }
+
+
+    </style>
+    <link rel="icon" href="hegel/ikonka.ico" type="image/x-icon">
+
+    <script>
+        function isMobile() {
+            const uaMatch = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+            const narrowScreen = window.screen.width <= 768;
+            return uaMatch || narrowScreen;
+        }
+
+        function isBrowserAllowed() {
+            const ua = navigator.userAgent;
+            const isOpera = /OPR\/|Opera Mini/i.test(ua);
+            const isSafari = /Safari/i.test(ua) && !/Chrome|Chromium/i.test(ua);
+            return !isOpera && !isSafari;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (isMobile() || !isBrowserAllowed()) {
+                const wall = document.getElementById('mobile-wall');
+                wall.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    </script>
+</head>
+<body>
+
+
+    <button id="music-btn" onclick="toggleMusic()">⏸ muzyka</button>
+
+    <script>
+        function toggleMusic() {
+            const audio = document.getElementById('bgMusic');
+            const btn = document.getElementById('music-btn');
+            if (audio.paused) {
+                audio.play();
+                btn.textContent = '⏸ muzyka';
+            } else {
+                audio.pause();
+                btn.textContent = '▶ muzyka';
+            }
+        }
+    </script>
+
+    <div class="board-title">/</div>
+
+    <nav>
+        [<a href="index.html#">Discord: atanazy</a>]
+        [<a href="biblia.html">Biblia</a>]
+        [<a href="https://www.youtube.com/@atanazy-3">YT</a>]
+
+        
+    </nav>
+    
+
+    
+
+    <div class="files-grid">
+        <div style="color: var(--primary); font-weight: bold; margin-top: 10px;">[Doc.]</div>
+
+        <div class="file-entry">
+            <a href="florenski.html" class="file-name">florenski.html</a>
+        </div>
+        <div class="file-entry">
+            <a href="kor11.html" class="file-name">kor_11.html</a>
+        </div>
+        <div class="file-entry">
+            <a href="metafizyka_ksiegi_wyjscia.html" class="file-name">metafizyka.html</a>
+        </div>
+        <div class="file-entry">
+            <a href="doswiadczeniereligijne.html" class="file-name">doswiadczenie_religijne.html</a>
+        </div>
+        <div class="file-entry">
+            <a href="doktrynaibunt.html" class="file-name">doktrynaibunt.html</a>
+        </div>
+        <div class="file-entry">
+            <a href="agrafon.html" class="file-name">agrafon.html</a>
+        </div>
+        <div class="file-entry">
+            <a href="swieceniakobiet.html" class="file-name">świecenia_kobiet.html</a>
+        </div>
+
+                <div class="file-entry">
+            <a href="godzinasw.html" class="file-name">godzina_Św.html</a>
+        </div>
+                <div class="file-entry">
+            <a href="praemotiophysica.html" class="file-name">praemotio_physica.html</a>
+        </div>
+                <div class="file-entry">
+            <a href="sadzenie.html" class="file-name">sądzenie.html</a>
+        </div>
+        
+                        <div class="file-entry">
+            <a href="modlitwatx.html" class="file-name">modlitwy.html</a>
+        </div>
+        
+                                <div class="file-entry">
+            <a href="NMP.html" class="file-name">Bogurodzica.html</a>
+        </div>
+        
+                                        <div class="file-entry">
+            <a href="Augustyn.html" class="file-name">Św.Augustyn.html</a>
+        </div>
+                     <div class="file-entry">
+            <a href="craniotomyandabortion.html" class="file-name">Kraniotomia i aborcja</a>
+        </div>
+    </div>
+    
+        
+    </div>
+    
+        <div class="files-grid">
+        <div style="color: var(--primary); font-weight: bold; margin-top: 10px;">[Przeciw.]</div>
+
+        <div class="file-entry">
+            <a href="przeciwzydom.html" class="file-name">przeciw_żydom.html</a>
+        </div>
+        <div class="file-entry">
+            <a href="przeciwmahometanom.html" class="file-name">przeciw_mahometanom.html</a>
+        </div>
+       </div>
+             <div class="file-entry">
+            <a href="przeciwko_herezji_protestanckiej.html" class="file-name">przeciwko_herezji_protestanckiej.html</a>
+        </div>
+     <div class="file-entry">
+            <a href="przeciwherezjibrakufilioque.html" class="file-name">przeciw_herezji_braku_filioque.html</a>
+        </div>
+             <div class="file-entry">
+            <a href="nieokreslonosc_schizmatykow.html" class="file-name">nieokreśloność_schizmatyków.html</a>
+        </div>
+        </div>
+             <div class="file-entry">
+            <a href="przeciwko_sedewakantyzujacym.html" class="file-name">przeciwko_sedewakantyzującym.html</a>
+        </div>
+            </div>
+             <div class="file-entry">
+            <a href="przeciwko_buddyzmowi.html" class="file-name">przeciwko_buddyzmowi.html</a>
+        </div>
+    <div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Przeciw Żydom</title>
+  <link href="mot.css" rel="stylesheet" type="text/css" media="all">
+      <link rel="icon" href="hegel/ikonka.ico" type="image/x-icon">
+
+  <style>
+
+    body {
+      background-color: #f0ede4;
+      font-family: "Times New Roman", Times, serif;
+      color: #111;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ===== NAGŁÓWEK STRONY ===== */
+    #page-header {
+      background-color: #2a1a0e;
+      color: #e8d9b0;
+      text-align: center;
+      padding: 14px 10px 10px;
+      border-bottom: 4px ridge #8b6914;
+    }
+
+    #page-header h1 {
+      margin: 0 0 4px 0;
+      font-size: 1.7em;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 0 #000;
+    }
+
+    #page-header p.subtitle {
+      margin: 0;
+      font-size: 0.92em;
+      color: #c9b87a;
+      font-style: italic;
+    }
+
+    /* ===== PASEK NAWIGACJI ===== */
+    #navbar {
+      background-color: #3d2b10;
+      text-align: center;
+      padding: 5px;
+      border-bottom: 2px solid #8b6914;
+    }
+
+    #navbar a {
+      color: #f5d98b;
+      font-size: 0.85em;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    #navbar a:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
+
+    /* ===== KONTENER GŁÓWNY ===== */
+    .container {
+      max-width: 820px;
+      margin: 18px auto;
+      padding: 0 10px;
+    }
+
+    /* ===== SEKCJA WSTĘPU ===== */
+    #intro-box {
+      background: #fff8e8;
+      border: 2px inset #8b6914;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+      font-size: 0.92em;
+    }
+
+    #intro-box p {
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    /* ===== TABELA KART ===== */
+    .books-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 2px solid #7a5c1e;
+    }
+
+    .books-table thead tr {
+      background-color: #2a1a0e;
+      color: #e8d9b0;
+      text-align: left;
+    }
+
+    .books-table thead th {
+      padding: 7px 10px;
+      font-size: 0.85em;
+      font-weight: bold;
+      border-right: 1px solid #5a3a0e;
+      letter-spacing: 0.5px;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    .books-table thead th:last-child {
+      border-right: none;
+    }
+
+    .books-table tbody tr {
+      border-bottom: 1px solid #c9a85c;
+      vertical-align: top;
+    }
+
+    .books-table tbody tr:nth-child(odd) {
+      background-color: #fffdf5;
+    }
+
+    .books-table tbody tr:nth-child(even) {
+      background-color: #f5eed9;
+    }
+
+    .books-table tbody tr:hover {
+      background-color: #faedc0;
+    }
+
+    .books-table td {
+      padding: 8px 10px;
+      font-size: 0.9em;
+      border-right: 1px solid #d4b870;
+      vertical-align: middle;
+    }
+
+    .books-table td:last-child {
+      border-right: none;
+    }
+
+    /* kolumna ze zdjęciem */
+    .td-img {
+      width: 200px;
+      text-align: center;
+    }
+
+.td-img img {
+  max-width: 200px;
+  max-height: 220px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  border: 2px ridge #8b6914;
+  display: block;
+  margin: 0 auto;
+  background: #fff;
+}
+
+    /* kolumna tytułu */
+    .td-title {
+      width: 42%;
+    }
+
+    .td-title strong {
+      display: block;
+      font-size: 1em;
+      margin-bottom: 2px;
+      color: #1a0e00;
+    }
+
+    .td-title span.author {
+      color: #5a3a0e;
+      font-style: italic;
+      font-size: 0.88em;
+    }
+
+    /* kolumna wieku */
+    .td-century {
+      width: 80px;
+      text-align: center;
+      color: #5a3a0e;
+      font-style: italic;
+      font-size: 0.88em;
+    }
+
+    /* kolumna linków */
+    .td-links {
+      width: 22%;
+    }
+
+    .td-links a {
+      display: block;
+      color: #003399;
+      font-size: 0.85em;
+      text-decoration: underline;
+      margin-bottom: 3px;
+      word-break: break-word;
+    }
+
+    .td-links a:visited {
+      color: #551a8b;
+    }
+
+    .td-links a:hover {
+      color: #cc0000;
+    }
+
+    /* ===== STOPKA ===== */
+    #page-footer {
+      text-align: center;
+      margin: 20px 0 10px;
+      font-size: 0.78em;
+      color: #6b4c1e;
+      border-top: 2px solid #8b6914;
+      padding-top: 8px;
+    }
+
+    /* ===== SEPARATOR ===== */
+    hr.ornament {
+      border: none;
+      border-top: 2px ridge #8b6914;
+      margin: 14px 0;
+    }
+    
+    .przyp-box {
+      background-color: #000000; 
+      color: #ffffff;           
+      border-left: 5px solid #fc69ff; 
+      padding: 15px 20px;
+      margin: 20px 0;
+      line-height: 1.6;
+      font-style: italic;
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+    }
+
+    .przyp-box a {
+      color: #f5d98b;
+      text-decoration: underline;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+<div id="page-header">
+  <h1>Przeciw Żydom</h1>
+</div>
+
+</div>
+
+<div class="container">
+
+
+  <table class="books-table" cellspacing="0" cellpadding="0">
+    <thead>
+      <tr>
+        <th>&#128100;</th>
+        <th>Tytuł / Autor</th>
+        <th>Wiek</th>
+        <th>Źródła</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td class="td-img">
+          <img src="hegel/kultura-krytyki.jpg" alt="MacDonald">
+        </td>
+        <td class="td-title">
+          <strong>Kultura krytyki. Ewolucjonistyczna analiza zaangazowania Żydow w XX-wieczne ruchy intelektualne i polityczne</strong>
+          <span class="author">Kevin B. MacDonald<br></span>
+        </td>
+        <td class="td-century">XX w.</td>
+        <td class="td-links">
+          <a href="https://lubimyczytac.pl/ksiazka/4879908/kultura-krytyki-ewolucjonistyczna-analiza-zaangazowania-zydow-w-xx-wieczne-ruchy-intelektualne-i-polityczne" target="_blank">Kultura krytyki [PL]</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="td-img">
+          <img src="hegel/judaizm-zdemaskowany-w-oparciu-o-jego-wlasne-swiete-ksiegi-tom-1_x_TRS_pad.png" alt="Hoffman">
+        </td>
+        <td class="td-title">
+          <strong>Judaizm zdemaskowany w oparciu o jego wlasne swiete ksiegi.</strong>
+          <span class="author">Michael Hoffman</span>
+        </td>
+        <td class="td-century">XXI w.</td>
+        <td class="td-links">
+          <a href="https://lubimyczytac.pl/ksiazka/178141/judaizm-zdemaskowany-w-oparciu-o-jego-wlasne-swiete-ksiegi-tom-1" target="_blank">Judaizm zdemaskowany w oparciu o jego wlasne swiete ksiegi [PL]</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="td-img">
+          <img src="hegel/zWVibuVzd9.png" alt="Judenthum">
+        </td>
+        <td class="td-title">
+          <strong>Entdecktes Judenthum</strong>
+          <span class="author">Johann Andreas Eisenmenger<br>
+          
+                                  O Talmudzie i jego niedorzecznościach — 1
+        Jak Żydzi nas oszukują i zwodzą — 91
+        Ich obelżywe nazwy dla Kościoła chrześcijańskiego — 156
+        Szydzenie z sakramentów i duchowieństwa chrześcijańskiego — 178
+        Wyśmiewanie chrześcijańskich świąt — 198
+        Żydowskie ukryte bluźnierstwa przeciw chrześcijanom — 213
+        Nienawiść Żydów do wszystkich narodów jako prawo — 294
+        Znieważanie religii chrześcijańskiej przez rabinów — 326
+        Czy chrześcijanie po śmierci powstają? Żydowskie procesy o mord rytualny — 339
+        Krzywoprzysięstwo i przysięgi wobec władzy. Co Żydzi sądzą o przysiędze — 384
+        O oszustwach, kradzieżach, lichwie i praktykach handlowych Żydów — 431
+        Jak plugawią i czynią nieczystym jedzenie chrześcijan — 468
+        Bezbożne nauki Talmudu przeciwko samemu majestatowi Boga — 495
+        Obelżywe imiona, którymi Żydzi nazywają Jezusa Chrystusa; straszliwe znieważenie Dziewicy Maryi — 535
+        Ich nauka, że wszyscy chrześcijanie będą potępieni — 572
+        Ich ohydna i zmysłowa nauka od diabłów — 583
+          </span>
+
+        </td>
+        <td class="td-century">XVII w.</td>
+        <td class="td-links">
+          <a href="https://archive.org/details/EisenmengersEntdecktesJudenthum" target="_blank">Entdecktes Judenthum [DE]</a>
+          
+        </td>
+      </tr>
+
+      <tr>
+        <td class="td-img">
+          <img src="hegel/xDrj08L52J.png" alt="Israel Shahak">
+        </td>
+        <td class="td-title">
+          <strong>Jewish History, Jewish Religion: The Weight of Three Thousand Years</strong>
+          <span class="author">Israel Shahak</span>
+        </td>
+        <td class="td-century">XX w.</td>
+        <td class="td-links">
+          <a href="https://isidore.co/CalibreLibrary/Franzelin,%20John%20Baptist,%20S.J_/Tractatus%20de%20divina%20traditione%20et%20scriptura%20(7736)/Tractatus%20de%20divina%20traditione%20et%20scriptur%20-%20Franzelin,%20John%20Baptist,%20S.J_.pdf" target="_blank">Jewish History, Jewish Religion: The Weight of Three Thousand Years [EN]</a>
+
+        </td>
+      </tr>
+
+           
+
+            <tr>
+        <td class="td-img">
+          <img src="hegel/page_0005.jpg" alt="Giovanni">
+        </td>
+        <td class="td-title">
+          <strong>Via della fede mostrata a gli Ebrei</strong>
+          <span class="author">Giovanni Battista Jona</span>
+        </td>
+        <td class="td-century">XVII w.</td>
+        <td class="td-links">
+          <a href="https://books.google.pl/books?id=ynkyb2o4-0IC&printsec=frontcover&redir_esc=y#v=onepage&q&f=false" target="_blank">Via della fede mostrata a gli Ebrei [IT]</a>
+          <br>
+          <a href="przeciwzydom.html#spis1" target="_blank">Spis Treści</a>
+
+        </td>
+      </tr>
+
+                  <tr>
+        <td class="td-img">
+          <img src="hegel/0012698443-L.jpg" alt="Michael Jones">
+        </td>
+        <td class="td-title">
+          <strong>The Jewish Revolutionary Spirit And Its Impact on World History</strong>
+          <span class="author">E. Michael Jones</span>
+        </td>
+        <td class="td-century">XXI w.</td>
+        <td class="td-links">
+          <a href="https://www.goodreads.com/book/show/219291140-the-jewish-revolutionary-spirit" target="_blank">The Jewish Revolutionary Spirit And Its Impact on World History [EN]</a>
+
+        </td>
+      </tr>
+      
+                        <tr>
+        <td class="td-img">
+          <img src="hegel/page_frjud.jpg" alt="Michael Jones">
+        </td>
+        <td class="td-title">
+          <strong>De l harmonie entre l Église et la Syna</strong>
+          <span class="author">David Paul Drach</span>
+        </td>
+        <td class="td-century">XIX w.</td>
+        <td class="td-links">
+          <a href="https://archive.org/details/delharmonieentr00unkngoog" target="_blank">De l harmonie entre l Église et la Syna [FR 2 TOMY]</a>
+
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <hr class="ornament">
+<h2 id="spis1">Via della fede mostrata a gli Ebrei Spis Treści</h2>
+<h3>O wygaśnięciu Prawa Mojżeszowego wraz z przyjściem Mesjasza, którym jest Chrystus, Pan nasz, oraz o dowodach dotyczących Jego tajemnic.</h3>
+
+<h3>Rozdział 1</h3>
+
+<strong>O przykazaniach Prawa Mojżeszowego, ich podziale oraz o tym, które z nich należy zachowywać obecnie.</strong>
+<strong>Strona 1</strong>
+
+<h3>Rozdział 2</h3>
+
+<strong>O nowym Prawie, które Mesjasz miał ustanowić – lepszym i doskonalszym od Prawa Mojżeszowego, które miało przeminąć. Ukazuje się tu przyjście Mesjasza, Syna Bożego, prawdziwego Boga i prawdziwego człowieka, którym był Jezus Chrystus, mający przez swoją świętą Mękę zgładzić wszystkie grzechy rodzaju ludzkiego.</strong>
+<strong>Strona 7</strong>
+
+<h3>Rozdział 3</h3>
+
+<strong>O narodzeniu Mesjasza w Betlejem z pokolenia Judy oraz o dziewictwie Jego Najświętszej Matki, Maryi.</strong>
+<strong>Strona 26</strong>
+
+<h3>Rozdział 4</h3>
+
+<strong>O darach i ofiarach złożonych Mesjaszowi po Jego narodzeniu w Betlejem.</strong>
+<strong>Strona 32</strong>
+
+<h3>Rozdział 5</h3>
+
+<strong>O tym, że Mesjasz miał być ubogi i pokorny oraz czynić cuda.</strong>
+<strong>Strona 34</strong>
+
+<h3>Rozdział 6</h3>
+
+<strong>O tym, że Mesjasz miał cierpieć, zostać sprzedany, ubiczowany, pobity i opluty.</strong>
+<strong>Strona 36</strong>
+
+<h3>Rozdział 7</h3>
+
+<strong>O tym, że podczas Męki Mesjasz miał zostać napojony żółcią i octem, a przy Jego śmierci słońce i księżyc miały się zaćmić.</strong>
+<strong>Strona 39</strong>
+
+<h3>Rozdział 8</h3>
+
+<strong>O tym, że Mesjasz miał zostać ukrzyżowany i umrzeć.</strong>
+<strong>Strona 41</strong>
+
+<h3>Rozdział 9</h3>
+
+<strong>O tym, że po śmierci Mesjasz miał zstąpić do Otchłani, zmartwychwstać trzeciego dnia, wstąpić do nieba, a przy końcu świata przyjść sądzić żywych i umarłych.</strong>
+<strong>Strona 45</strong>
+
+<h3>Rozdział 10</h3>
+
+<strong>O tym, że Żydzi oczekują dwóch Mesjaszy oraz o ich fałszywych mesjaszach.</strong>
+<strong>Strona 68</strong>
+
+<h3>Rozdział 11</h3>
+
+<strong>Za jaki grzech Żydzi pozostają rozproszeni i poddani tak długotrwałemu wygnaniu.</strong>
+<strong>Strona 78</strong>
+
+<h3>Rozdział 12</h3>
+
+<strong>O przekleństwie zesłanym przez Boga na Żydów za to, że nie chcieli uwierzyć w prawdziwego Mesjasza, Jezusa, oraz w Jego święte Prawo.</strong>
+
+<strong>Strona 89</strong>
+<br>
+<strong>O wygaśnięciu przepisów obrzędowych i sądowych Prawa Mojżeszowego, czyli ceremonii żydowskich, z powodu wykroczeń, zabobonów i bezbożności Żydów, oraz o zastąpieniu ich obrzędami religii chrześcijańskiej, zwłaszcza sakramentami, z których niektóre zostają tu dowiedzione.</strong>
+<br>
+<strong>Strona 101</strong>
+
+<h3>O wygaśnięciu przepisów obrzędowych i sądowych Prawa Mojżeszowego, czyli ceremonii żydowskich, z powodu wykroczeń, zabobonów i bezbożności Żydów, oraz o zastąpieniu ich obrzędami religii chrześcijańskiej, zwłaszcza sakramentami, z których niektóre zostają tu dowiedzione.</h3>
+
+
+<h3>Rozdział 1</h3>
+
+<strong>W jakim znaczeniu w tej części należy rozumieć przepisy obrzędowe, czyli ceremonie żydowskie; o ich podziale i porządku oraz o tym, dlaczego z ich powodu Żydzi ponoszą winę.</strong>
+<strong>Strona 102</strong>
+
+<h3>Rozdział 2</h3>
+
+<strong>O obrzędach sprawowanych przez Żydów od narodzin dziecka aż do dnia obrzezania.</strong>
+<strong>Strona 111</strong>
+
+<h3>Rozdział 3</h3>
+
+<strong>O obrzędach odprawianych ósmego dnia po narodzinach dziecka oraz o sposobie dokonywania obrzezania.</strong>
+<strong>Strona 114</strong>
+
+<h3>Rozdział 4</h3>
+
+<strong>O przykazaniu obrzezania, gdzie wykazuje się, że po przyjściu Mesjasza nie powinno być już praktykowane, lecz zastąpione przez Najświętszy Chrzest.</strong>
+<strong>Strona 119</strong>
+
+<h3>Rozdział 5</h3>
+
+<strong>O obrzędach, które Żydzi odprawiają obecnie przy wykupieniu swoich pierworodnych synów.</strong>
+<strong>Strona 146</strong>
+
+<h3>Rozdział 6</h3>
+
+<strong>O sposobie wychowywania i kształcenia dzieci.</strong>
+<strong>Strona 156</strong>
+
+<h3>Rozdział 7</h3>
+
+<strong>O przykazaniach, zwyczajach i przesądach Żydów dotyczących ubioru.</strong>
+<strong>Strona 166</strong>
+
+<h3>Rozdział 8</h3>
+
+<strong>O obmyciach i oczyszczaniu praktykowanych przez Żydów.</strong>
+<strong>Strona 175</strong>
+
+<h3>Rozdział 9</h3>
+
+<strong>O modlitwach i błogosławieństwach odmawianych przez Żydów po dokonaniu obmycia i oczyszczenia.</strong>
+<strong>Strona 183</strong>
+
+<h3>Rozdział 10</h3>
+
+<strong>O *Arba Kanfot*, *Tallicie* (płaszczu modlitewnym) oraz o płaszczu z frędzlami i o tym, jak Żydzi zachowują przykazanie jego noszenia.</strong>
+<strong>Strona 188</strong>
+
+<h3>Rozdział 11</h3>
+
+<strong>O *tefillin* (filakteriach), zwanych także *totafot*, które Żydzi uważają za obowiązkowe do noszenia.</strong>
+<strong>Strona 201</strong>
+
+<h3>Rozdział 12</h3>
+
+<strong>O *mezuzie*, czyli piśmie umieszczanym w odrzwiach domów, które Żydzi uważają za nakazane przez Prawo.</strong>
+<strong>Strona 219</strong>
+
+<h3>Rozdział 13</h3>
+
+<strong>O synagogach żydowskich, ich sługach oraz innych miejscach przeznaczonych do dzieł pobożnych.</strong>
+<strong>Strona 223</strong>
+
+<h3>Rozdział 14</h3>
+
+<strong>O modlitwach i praktykach religijnych odprawianych przez Żydów rano w synagodze w sześć dni tygodnia, z wyjątkiem szabatu.</strong>
+<strong>Strona 243</strong>
+
+<h3>Rozdział 15</h3>
+
+<strong>O modlitwach i praktykach religijnych odprawianych przez Żydów po południu w synagodze w sześć dni tygodnia, z wyjątkiem szabatu.</strong>
+<strong>Strona 282</strong>
+
+<h3>Rozdział 16</h3>
+
+<strong>O modlitwach i praktykach religijnych odprawianych przez Żydów wieczorem i w nocy w synagodze w sześć dni tygodnia, z wyjątkiem szabatu.</strong>
+<strong>Strona 286</strong>
+
+<h3>Rozdział 17</h3>
+
+<strong>O modlitwach i praktykach religijnych odprawianych przez Żydów w synagodze podczas szabatu.</strong>
+<strong>Strona 291</strong>
+
+<h3>Rozdział 18</h3>
+
+<strong>O innych czynnościach i obrzędach wykonywanych w synagodze poza modlitwami.</strong>
+<strong>Strona 313</strong>
+
+<h3>Rozdział 19</h3>
+
+<strong>O błogosławieństwie udzielanym przez kapłanów żydowskich oraz o sposobie, w jaki przekazują je ludowi.</strong>
+<strong>Strona 317</strong>
+
+<h3>Rozdział 20</h3>
+
+<strong>O przywilejach kapłanów żydowskich oraz o *challi* (części ciasta przeznaczonej na ofiarę).</strong>
+<strong>Strona 322</strong>
+
+<h3>Rozdział 21</h3>
+
+<strong>O ofiarach Prawa Mojżeszowego, które mieli składać lewiccy kapłani z rodu Aarona; o tym, jak po przyjściu Jezusa Chrystusa, prawdziwego Mesjasza, kapłaństwo żydowskie zostało zastąpione kapłaństwem chrześcijańskim; oraz o tym, jak wszystkie dawne ofiary zostały zastąpione jedyną Ofiarą Eucharystii, czyli Mszy Świętej.</strong>
+<strong>Strona 376</strong>
+
+<h3>Rozdział 22</h3>
+
+<strong>O modlitwach Żydów poza synagogą oraz o ich postach w ogólności.</strong>
+<strong>Strona 403</strong>
+
+<h3>Rozdział 23</h3>
+
+<strong>O świętach żydowskich, czyli o ich kalendarzu, a przede wszystkim o święcie i obrzędach obchodzonych na początku każdego miesiąca, wraz z porządkiem i nazwami miesięcy.</strong>
+<strong>Strona 414</strong>
+
+
+<h3>Rozdział 24</h3>
+
+<strong>O pierwszym miesiącu, czyli Nisan. Wyjaśnia się, kiedy przypada, oraz omawia się żydowskie *Tekufot* (Tekuphòt), czyli dwie równonoce i dwa przesilenia.</strong>
+<strong>Strona 444</strong>
+
+<h3>Rozdział 25</h3>
+
+<strong>Dalszy ciąg rozważań o *Tekufot*, zwłaszcza według nauki Mara Samuela.</strong>
+<strong>Strona 469</strong>
+
+<h3>Rozdział 26</h3>
+
+<strong>Dalszy ciąg tej samej tematyki, czyli o *Tekufot* według Rawa Ady oraz według prawdy.</strong>
+<strong>Strona 485</strong>
+
+<h3>Rozdział 27</h3>
+
+<strong>O poście pierworodnych synów obchodzonym przez Żydów w miesiącu Nisan oraz o obrzędach związanych z wyszukiwaniem, spalaniem i usuwaniem chleba oraz wszelkiego kwasu.</strong>
+<strong>Strona 522</strong>
+
+<h3>Rozdział 28</h3>
+
+<strong>O sposobie przygotowywania przez Żydów przaśników (macy).</strong>
+<strong>Strona 517</strong>
+
+<h3>Rozdział 29</h3>
+
+<strong>O żydowskiej Paschy Przaśników – czym jest i kiedy przypada: czy piętnastego, czy czternastego dnia miesiąca Nisan – oraz o tym, że Żydzi naruszają Prawo przez ustanowioną przez siebie regułę.</strong>
+<strong>Strona 530</strong>
+
+<h3>Rozdział 30</h3>
+
+<strong>O obrzędach praktykowanych przez Żydów w dniach Święta Przaśników.</strong>
+<strong>Strona 550</strong>
+
+<h3>Rozdział 31</h3>
+
+<strong>Dalszy ciąg opisu obrzędów sprawowanych przez Żydów podczas Święta Przaśników.</strong>
+<strong>Strona 568</strong>
+
+<h3>Rozdział 32</h3>
+
+<strong>O tym, że Pascha Mojżeszowa nie powinna być już zachowywana, lecz zastąpiona Paschą chrześcijańską, której tamta była zapowiedzią.</strong>
+<strong>Strona 589</strong>
+
+<h3>Rozdział 33</h3>
+
+<strong>O liczeniu siedmiu tygodni rozpoczynanym przez Żydów wieczorem po pierwszym dniu Święta Przaśników.</strong>
+<strong>Strona 614</strong>
+
+<h3>Rozdział 34</h3>
+
+<strong>O Święcie Tygodni obchodzonym przez Żydów w trzecim miesiącu, Siwan, zwanym przez nich także Nadaniem Prawa, a przez chrześcijan Pięćdziesiątnicą.</strong>
+<strong>Strona 619</strong>
+
+<h3>Rozdział 35</h3>
+
+<strong>O poście obchodzonym przez Żydów siedemnastego dnia miesiąca Tamuz, czwartego miesiąca roku.</strong>
+<strong>Strona 624</strong>
+
+<h3>Rozdział 36</h3>
+
+<strong>O trzech tygodniach i szabatach żałoby, trwających od postu siedemnastego dnia miesiąca Tamuz aż do dziewiątego dnia miesiąca Aw; o poście tego dnia, płaczu i obrzędach związanych ze zburzeniem Świątyni oraz o daremnej nadziei Żydów na powrót do Jerozolimy i odbudowę Świątyni.</strong>
+<strong>Strona 631</strong>
+
+<h3>Rozdział 37</h3>
+
+<strong>O praktykach Żydów w szóstym miesiącu Elul: o ich modlitwach, wyznaniach grzechów oraz o wigilii Nowego Roku.</strong>
+<strong>Strona 638</strong>
+
+<h3>Rozdział 38</h3>
+
+<strong>O święcie Nowego Roku, jego obrzędach oraz o dźwięku rogu (*szofaru*).</strong>
+<strong>Strona 645</strong>
+
+<h3>Rozdział 39</h3>
+
+<strong>O poście obchodzonym przez Żydów trzeciego dnia miesiąca Tiszri oraz o związanych z nim obrzędach.</strong>
+<strong>Strona 663</strong>
+
+<h3>Rozdział 40</h3>
+
+<strong>O dziesięciu dniach skruchy w miesiącu Tiszri; o wigilii Dnia Przebłagania (*Jom Kippur*), przypadającej w tym okresie, oraz o obrzędach i przesądach praktykowanych tego dnia.</strong>
+<strong>Strona 664</strong>
+
+<h3>Rozdział 41</h3>
+
+<strong>O Dniu Przebłagania (*Jom Kippur*), obchodzonym dziesiątego dnia siódmego miesiąca, oraz o modlitwach, obrzędach i przesądach związanych z tym świętem.</strong>
+<strong>Strona 671</strong>
+
+<h3>Rozdział 42</h3>
+
+<strong>O Święcie Namiotów (Szałasów), obchodzonym przez Żydów w siódmym miesiącu Tiszri; o lulawie, gałązkach palmy, mirtu i wierzby oraz owocu cedratu używanych podczas tego święta; a także o obrzędach, przesądach i modlitwach pierwszego i drugiego dnia święta.</strong>
+<strong>Strona 727</strong>
+
+<h3>Rozdział 43</h3>
+
+<strong>O czterech dniach powszednich przypadających w oktawie Święta Namiotów, czyli o dniu trzecim, czwartym, piątym i szóstym oraz o porządku ich obchodów.</strong>
+<strong>Strona 750</strong>
+
+<h3>Rozdział 44</h3>
+
+<strong>O siódmym dniu Święta Namiotów, zwanym *Hoszana Rabba* („Wielka Hosanna”) lub Dniem Wierzby.</strong>
+<strong>Strona 759</strong>
+
+<h3>Rozdział 45</h3>
+
+<strong>O święcie następującym po Święcie Namiotów, zwanym *Szemini Aceret* („Ósmy Dzień Zgromadzenia”), oraz o modlitwie o deszcz odmawianej tego dnia.</strong>
+<strong>Strona 773</strong>
+
+<h3>Rozdział 46</h3>
+
+<strong>O dniu zwanym przez Żydów *Simchat Tora* („Radość Tory”), obchodzonym dziewiątego dnia po rozpoczęciu Święta Namiotów, bezpośrednio po jego oktawie, w siódmym miesiącu Tiszri.</strong>
+<strong>Strona 786</strong>
+
+<h3>Rozdział 47</h3>
+
+<strong>O święcie Chanuka obchodzonym przez Żydów w dziewiątym miesiącu, Kislew, oraz o jego obrzędach i przesądach.</strong>
+<strong>Strona 794</strong>
+
+<h3>Rozdział 48</h3>
+
+<strong>O poście obchodzonym przez Żydów dziesiątego dnia dziesiątego miesiąca, Tewet.</strong>
+<strong>Strona 812</strong>
+
+<h3>Rozdział 49</h3>
+
+<strong>O obrzędach sprawowanych przez Żydów w szabat poprzedzający święto Purim oraz o poście w wigilię tego święta, przypadającego w ostatnim miesiącu, Adar.</strong>
+<strong>Strona 814</strong>
+
+<h3>Rozdział 50</h3>
+
+<strong>O święcie Purim oraz o obrzędach praktykowanych przez Żydów w ostatnim miesiącu, Adar.</strong>
+<strong>Strona 825</strong>
+
+<h3>Rozdział 51</h3>
+
+<strong>O przykazaniach Prawa Mojżeszowego dotyczących rolnictwa i hodowli, których Żydzi nie zachowują.</strong>
+<strong>Strona 843</strong>
+
+<h3>Rozdział 52</h3>
+
+<strong>O wszelkiego rodzaju zwierzętach oraz o tym, które z nich Bóg zakazał Żydom spożywać, a które dopuścił; czyli o zwierzętach czystych i nieczystych.</strong>
+<strong>Strona 852</strong>
+
+<h3>Rozdział 53</h3>
+
+<strong>O uboju rytualnym dokonywanym przez Żydów, zwłaszcza w celu przygotowania mięsa do spożycia; o *szechicie* (*shechita*) i *bedice* (*bedikah*), czyli rytualnym uboju oraz badaniu wnętrzności zwierząt, a także o przesądach z tym związanych.</strong>
+<strong>Strona 876</strong>
+
+<h3>Rozdział 54</h3>
+
+<strong>O pokarmach zakazanych Żydom oraz o tym, czego nie wolno im spożywać.</strong>
+<strong>Strona 884</strong>
+
+<h3>Rozdział 55</h3>
+
+<strong>O czystości i nieczystości rytualnej według Żydów, odnoszącej się do pokarmów, ludzi i innych rzeczy; o skutkach nieczystości przewidzianej przez Prawo oraz o sposobach oczyszczenia. Ukazuje się tu również naruszanie Prawa i przesądy praktykowane przez Żydów.</strong>
+<strong>Strona 907</strong>
+
+<h3>Rozdział 56</h3>
+
+<strong>O winie zakazanym Żydom do picia.</strong>
+<strong>Strona 930</strong>
+
+<h3>Rozdział 57</h3>
+
+<strong>O obrzędach praktykowanych przez Żydów podczas obiadu, wieczerzy i każdego posiłku, gdy przystępują do jedzenia chleba.</strong>
+<strong>Strona 941</strong>
+
+<h3>Rozdział 58</h3>
+
+<strong>O tym, co czynią Żydzi przed udaniem się na spoczynek.</strong>
+<strong>Strona 957</strong>
+
+<h3>Rozdział 59</h3>
+
+<strong>O sprawach dotyczących kobiet żydowskich, przede wszystkim o menstruacji oraz o przesądach z nią związanych.</strong>
+<strong>Strona 963</strong>
+
+<h3>Rozdział 60</h3>
+
+<strong>O obowiązku zawarcia małżeństwa, który – według Żydów – spoczywa na każdym człowieku, oraz o obrzędach towarzyszących zawieraniu małżeństwa.</strong>
+<strong>Strona 984</strong>
+
+<h3>Rozdział 61</h3>
+
+<strong>O osobach i stopniach pokrewieństwa, między którymi zaręczyny lub małżeństwo mogą być zawarte według prawa żydowskiego, oraz o tych, między którymi są zakazane.</strong>
+<strong>Strona 994</strong>
+
+<h3>Rozdział 62</h3>
+
+<strong>O żydowskim kontrakcie małżeńskim (*ketubie*) i umowach małżeńskich; o tym, jak niektórzy Żydzi sprzeciwiają się w tej kwestii Pismu Świętemu; o szkodzie wyrządzanej religii chrześcijańskiej, gdy nawrócony na prawdziwą wiarę mąż oddala żonę pozostającą w judaizmie; o tym, że nawrócenie męża nie unieważnia małżeństwa, nawet jeśli żona pozostaje przy judaizmie; oraz o sporze, czy w takim przypadku mąż powinien zwrócić żonie posag. Autor rozstrzyga tę kwestię przecząco, opierając się zarówno na nauce prawników, jak i samych rabinów.</strong>
+<strong>Strona 1002</strong>
+
+<h3>Rozdział 63</h3>
+
+<strong>O rozwodzie udzielanym przez Żydów: w jakich przypadkach jest dopuszczalny oraz jakie obrzędy i przesądy towarzyszą jego udzieleniu i sporządzeniu aktu rozwodowego.</strong>
+<strong>Strona 1019</strong>
+
+<h3>Rozdział 64</h3>
+
+<strong>O mojżeszowym nakazie lewiratu (*jibbum*), czyli poślubienia wdowy po zmarłym bracie, oraz o obrzędzie *chalicy* (*chalitzah*), praktykowanym w przypadku, gdy brat zmarłego nie chce zawrzeć takiego małżeństwa.</strong>
+<strong>Strona 1045</strong>
+
+<h3>Rozdział 65</h3>
+
+<strong>O przesądach praktykowanych przez Żydów przy porodzie ich kobiet.</strong>
+<strong>Strona 1048</strong>
+
+<h3>Rozdział 66</h3>
+
+<strong>O przepisach odnoszących się do kobiet żydowskich.</strong>
+<strong>Strona 1052</strong>
+
+<h3>Rozdział 67</h3>
+
+<strong>O obrzędach praktykowanych przez Żydów podczas choroby; o ich spowiedzi oraz o wykazaniu, że to spowiedź chrześcijańska jest prawdziwa i zgodna z wolą Boga; a także o żydowskich obrzędach związanych ze śmiercią i pogrzebem.</strong>
+<strong>Strona 1063</strong>
+
+<h3>Rozdział 68</h3>
+
+<strong>O nauce Żydów dotyczącej stanu człowieka po śmierci, czyśćca, piekła, raju oraz zmartwychwstania umarłych.</strong>
+<strong>Strona 1095</strong>
+
+<h3>Rozdział 69</h3>
+
+<strong>O Talmudzie Żydów, będącym źródłem i podstawą wszystkich przykazań, które uważają za obowiązujące. Przedstawiono jego powstanie, czas spisania oraz wskazano zawarte w nim błędy i bluźnierstwa, aby wykazać, jak fałszywe jest twierdzenie, że stanowi on tradycję Mojżesza, a nawet jak bardzo jest godny potępienia.</strong>
+<strong>Strona 1130</strong>
+
+<h3>Rozdział 70</h3>
+
+<strong>O akademiach (szkołach) żydowskich oraz o sposobie prowadzenia w nich dysput.</strong>
+<strong>Strona 1168</strong>
+
+<h3>Rozdział 71</h3>
+
+<strong>O godności języka hebrajskiego oraz o tym, że wśród Żydów niemal całkowicie zanikł i wygasł.</strong>
+<strong>Strona 1180</strong>
+
+<h3>Rozdział 72</h3>
+
+<strong>O sposobie sporządzania *Sefer Tory*, czyli zwoju Prawa przechowywanego w synagogach; o związanych z tym przesądach i naruszeniach Prawa oraz o wykazaniu, że współczesne pismo hebrajskie nie jest tym samym, którego używał Mojżesz.</strong>
+<strong>Strona 1188</strong>
+
+
+<strong>Strona 1211</strong>
+
+
+<h3>O przykazaniach Dekalogu naruszanych i zniekształcanych przez Żydów poprzez ich – według autora – bezbożność i przesądy.
+</h3>
+
+<h3>Rozdział 1</h3>
+
+<strong>Czym jest Dekalog oraz jaki jest podział jego przykazań.</strong>
+<strong>Strona 1212</strong>
+
+<h3>Rozdział 2</h3>
+
+<strong>O pierwszym przykazaniu Dekalogu, w którym autor stara się wykazać Żydom tajemnicę Trójcy Przenajświętszej, to znaczy, że należy czcić Boga jednego w naturze, lecz troistego w Osobach. Omawia także wiarę oraz jej artykuły zarówno u chrześcijan, jak i u Żydów.</strong>
+<strong>Strona 1227</strong>
+
+<h3>Rozdział 3</h3>
+
+<strong>O zakazie magii, czarów i przesądów zawartym w pierwszym przykazaniu Dekalogu oraz o sposobie jego przestrzegania przez Żydów.</strong>
+<strong>Strona 1276</strong>
+
+<h3>Rozdział 4</h3>
+
+<strong>O wierze Żydów w sny, uznanej przez autora za sprzeczną z pierwszym przykazaniem Dekalogu, oraz o obrzędach z nimi związanych.</strong>
+<strong>Strona 1289</strong>
+
+<h3>Rozdział 5</h3>
+
+<strong>O drugim przykazaniu Dekalogu zakazującym wykonywania i oddawania czci obrazom. Autor stara się wykazać, że nie chrześcijanie, lecz Żydzi są bałwochwalcami.</strong>
+<strong>Strona 1299</strong>
+
+<h3>Rozdział 6</h3>
+
+<strong>O trzecim przykazaniu Dekalogu zakazującym nadaremnego wzywania imienia Bożego oraz o sposobach jego naruszania przez Żydów. Szczególnie omawia śluby, rozgrzeszenia udzielane z ich naruszenia, a także bluźnierstwa zakazane tym przykazaniem, które – według autora – są przez Żydów akceptowane.</strong>
+<strong>Strona 1315</strong>
+
+<h3>Rozdział 7</h3>
+
+<strong>O czwartym przykazaniu Dekalogu nakazującym święcenie szabatu; o obrzędach zachowywanych przez Żydów, takich jak *Kiddusz* i trzy szabatowe posiłki; o naruszeniach i przesądach z nimi związanych; o trzydziestu dziewięciu zakazanych pracach oraz o zakazach obowiązujących również podczas innych świąt.</strong>
+<strong>Strona 1324</strong>
+
+<h3>Rozdział 8</h3>
+
+<strong>O *eruwach* (*eruvim*), ustanawianych przez Żydów na potrzeby szabatu, aby umożliwić przenoszenie przedmiotów, żywności i przemieszczanie się; o podobnych rozwiązaniach stosowanych w święta oraz o związanych z nimi naruszeniach i przesądach.</strong>
+<strong>Strona 1343</strong>
+
+<h3>Rozdział 9</h3>
+
+<strong>Czy przykazanie szabatu ma charakter naturalny i moralny, czy też jedynie ceremonialny? Autor stara się wykazać, że nie należy już zachowywać szabatu, lecz niedzielę.</strong>
+<strong>Strona 1357</strong>
+
+<h3>Rozdział 10</h3>
+
+<strong>O piątym przykazaniu Dekalogu nakazującym czcić ojca i matkę oraz o jego naruszaniu przez Żydów.</strong>
+<strong>Strona 1368</strong>
+
+<h3>Rozdział 11</h3>
+
+<strong>O przykazaniu Dekalogu „Nie zabijaj” oraz o jego naruszaniu przez Żydów między sobą.</strong>
+<strong>Strona 1379</strong>
+
+<h3>Rozdział 12</h3>
+
+<strong>O nienawiści, jaką – według autora – Żydzi żywią wobec chrześcijan, o przekleństwach i innych jej przejawach oraz o tym, że również w ten sposób naruszają przykazanie Dekalogu.</strong>
+<strong>Strona 1383</strong>
+
+<h3>Rozdział 13</h3>
+
+<strong>O siódmym przykazaniu Dekalogu: „Nie cudzołóż”, które – według autora – jest naruszane przez Żydów.</strong>
+<strong>Strona 1425</strong>
+
+<h3>Rozdział 14</h3>
+
+<strong>O ósmym przykazaniu Dekalogu: „Nie kradnij” oraz o obowiązku zwrotu cudzej własności, które – według autora – są naruszane przez Żydów.</strong>
+<strong>Strona 1436</strong>
+
+<h3>Rozdział 15</h3>
+
+<strong>O zakazie pobierania lichwy zawartym w tym samym ósmym przykazaniu oraz o sposobie jego przestrzegania przez Żydów.</strong>
+<strong>Strona 1438</strong>
+
+<h3>Rozdział 16</h3>
+
+<strong>O przykazaniu *Szemity*, czyli roku darowania długów, w którym należało umarzać wierzytelności, oraz o tym, jak jest ono przestrzegane przez Żydów. Omówiono również stosowaną przez nich umowę *prozbul*.</strong>
+<strong>Strona 1440</strong>
+
+<h3>Rozdział 17</h3>
+
+<strong>O dziewiątym przykazaniu Dekalogu: „Nie mów fałszywego świadectwa” oraz o jego naruszaniu przez Żydów.</strong>
+<strong>Strona 1444</strong>
+
+<h3>Rozdział 18</h3>
+
+<strong>O dziesiątym i ostatnim przykazaniu Dekalogu: „Nie pożądaj cudzej własności ani cudzej żony” oraz o jego naruszaniu przez Żydów.</strong>
+<strong>Strona 1451</strong>
+
+<h3>Rozdział 19</h3>
+
+<strong>Zakończenie dzieła. Rozważanie nad słowem „Amen” i jego tajemnicami.</strong>
+<strong>Strona 1453</strong>
+
+
+</div>
+     
+  
+</div>
+</body>
+</html>

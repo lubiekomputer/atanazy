@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Przeciw Mahometanom</title>
+  <link href="mot.css" rel="stylesheet" type="text/css" media="all">
+      <link rel="icon" href="hegel/ikonka.ico" type="image/x-icon">
+
+  <style>
+
+    body {
+      background-color: #f0ede4;
+      font-family: "Times New Roman", Times, serif;
+      color: #111;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ===== NAGŁÓWEK STRONY ===== */
+    #page-header {
+      background-color: #2a1a0e;
+      color: #e8d9b0;
+      text-align: center;
+      padding: 14px 10px 10px;
+      border-bottom: 4px ridge #8b6914;
+    }
+
+    #page-header h1 {
+      margin: 0 0 4px 0;
+      font-size: 1.7em;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 0 #000;
+    }
+
+    #page-header p.subtitle {
+      margin: 0;
+      font-size: 0.92em;
+      color: #c9b87a;
+      font-style: italic;
+    }
+
+    /* ===== PASEK NAWIGACJI ===== */
+    #navbar {
+      background-color: #3d2b10;
+      text-align: center;
+      padding: 5px;
+      border-bottom: 2px solid #8b6914;
+    }
+
+    #navbar a {
+      color: #f5d98b;
+      font-size: 0.85em;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    #navbar a:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
+
+    /* ===== KONTENER GŁÓWNY ===== */
+    .container {
+      max-width: 820px;
+      margin: 18px auto;
+      padding: 0 10px;
+    }
+
+    /* ===== SEKCJA WSTĘPU ===== */
+    #intro-box {
+      background: #fff8e8;
+      border: 2px inset #8b6914;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+      font-size: 0.92em;
+    }
+
+    #intro-box p {
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    /* ===== TABELA KART ===== */
+    .books-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 2px solid #7a5c1e;
+    }
+
+    .books-table thead tr {
+      background-color: #2a1a0e;
+      color: #e8d9b0;
+      text-align: left;
+    }
+
+    .books-table thead th {
+      padding: 7px 10px;
+      font-size: 0.85em;
+      font-weight: bold;
+      border-right: 1px solid #5a3a0e;
+      letter-spacing: 0.5px;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    .books-table thead th:last-child {
+      border-right: none;
+    }
+
+    .books-table tbody tr {
+      border-bottom: 1px solid #c9a85c;
+      vertical-align: top;
+    }
+
+    .books-table tbody tr:nth-child(odd) {
+      background-color: #fffdf5;
+    }
+
+    .books-table tbody tr:nth-child(even) {
+      background-color: #f5eed9;
+    }
+
+    .books-table tbody tr:hover {
+      background-color: #faedc0;
+    }
+
+    .books-table td {
+      padding: 8px 10px;
+      font-size: 0.9em;
+      border-right: 1px solid #d4b870;
+      vertical-align: middle;
+    }
+
+    .books-table td:last-child {
+      border-right: none;
+    }
+
+    /* kolumna ze zdjęciem */
+    .td-img {
+      width: 200px;
+      text-align: center;
+    }
+
+    .td-img img {
+      width: 150px;
+      height: 230px;
+      object-fit: cover;
+      border: 2px ridge #8b6914;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* kolumna tytułu */
+    .td-title {
+      width: 42%;
+    }
+
+    .td-title strong {
+      display: block;
+      font-size: 1em;
+      margin-bottom: 2px;
+      color: #1a0e00;
+    }
+
+    .td-title span.author {
+      color: #5a3a0e;
+      font-style: italic;
+      font-size: 0.88em;
+    }
+
+    /* kolumna wieku */
+    .td-century {
+      width: 80px;
+      text-align: center;
+      color: #5a3a0e;
+      font-style: italic;
+      font-size: 0.88em;
+    }
+
+    /* kolumna linków */
+    .td-links {
+      width: 22%;
+    }
+
+    .td-links a {
+      display: block;
+      color: #003399;
+      font-size: 0.85em;
+      text-decoration: underline;
+      margin-bottom: 3px;
+      word-break: break-word;
+    }
+
+    .td-links a:visited {
+      color: #551a8b;
+    }
+
+    .td-links a:hover {
+      color: #cc0000;
+    }
+
+    /* ===== STOPKA ===== */
+    #page-footer {
+      text-align: center;
+      margin: 20px 0 10px;
+      font-size: 0.78em;
+      color: #6b4c1e;
+      border-top: 2px solid #8b6914;
+      padding-top: 8px;
+    }
+
+    /* ===== SEPARATOR ===== */
+    hr.ornament {
+      border: none;
+      border-top: 2px ridge #8b6914;
+      margin: 14px 0;
+    }
+    
+    .przyp-box {
+      background-color: #000000; 
+      color: #ffffff;           
+      border-left: 5px solid #fc69ff; 
+      padding: 15px 20px;
+      margin: 20px 0;
+      line-height: 1.6;
+      font-style: italic;
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+    }
+
+    .przyp-box a {
+      color: #f5d98b;
+      text-decoration: underline;
+    }
+    /* ===== SIATKA GŁÓWNA (GRID) ===== */
+    .grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 0.8fr;
+      gap: 15px;
+    }
+
+    /* DOLNA SEKCJA (MS EVIDENCE) - rozciągnięcie na całą szerokość gridu */
+    .ms-evidence {
+      grid-column: 1 / span 4;
+    }
+
+    .ms-ev-grid {
+      display: flex;
+      gap: 20px;
+    }
+
+    .ms-ev-item {
+      flex: 1;
+      text-align: center;
+    }
+
+    .ms-ev-item h3 {
+      font-size: 13px;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    /* RESPONSYWNOŚĆ SIATKI */
+    @media (max-width: 1100px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+      .ms-evidence { grid-column: span 2; }
+    }
+    @media (max-width: 700px) {
+      .grid { grid-template-columns: 1fr; }
+      .ms-evidence { grid-column: span 1; }
+    }
+    /* ===== KARTY ARGUMENTÓW - STYL CZARNO-BIAŁY (oryginalny) ===== */
+    .card {
+      background: #000000;
+      color: #ffffff;
+      padding: 20px;
+      border: 1.5px solid #ffffff;
+      border-radius: 0;
+    }
+
+    .card h2 {
+      font-size: 13px;
+      color: #ffffff;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #ffffff;
+      padding-bottom: 8px;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .verse-ref, .ref {
+      color: #ffffff;
+      font-weight: 900;
+      text-decoration: underline;
+      font-size: 13px;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .verse-text, .quote, .desc, .mu-bullet, .txt {
+      font-size: 11.5px;
+      color: #cccccc;
+    }
+
+    .verse, .incorr-verse {
+      margin-bottom: 10px;
+    }
+
+    .arrow-down, .incorr-arrow {
+      text-align: center;
+      color: #ffffff;
+      font-size: 18px;
+      margin: 5px 0;
+    }
+
+    .extra-verses-box {
+      margin-top: 15px;
+      background-color: #000000;
+      border: 1.5px solid #ffffff;
+      padding: 10px;
+      font-size: 11px;
+      color: #cccccc;
+      line-height: 1.6;
+    }
+
+    .extra-verses-box strong {
+      color: #ffffff;
+      display: block;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    /* Badacze */
+    .scholars {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .scholar {
+      margin-bottom: 15px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
+    }
+
+    .scholar .name {
+      font-weight: 800;
+      font-size: 11px;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    /* Sekcja "muzułmanie używają..." */
+    .mu-section h3 {
+      font-size: 12px;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin: 10px 0 8px 0;
+      letter-spacing: 0.5px;
+    }
+
+    .mu-bullet {
+      margin-bottom: 8px;
+      padding-left: 10px;
+      border-left: 2px solid #555;
+    }
+
+    /* Koran potwierdza chrześcijaństwo */
+    .affirm-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .affirm-item {
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
+    }
+
+    /* Warianty qirāʾāt */
+    .case {
+      grid-column: 1 / -1;
+      background: #000000;
+      color: #ffffff;
+      border: 1.5px solid #ffffff;
+      padding: 20px;
+      margin-bottom: 10px;
+    }
+
+    .case h2 {
+      font-size: 14px;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #ffffff;
+      padding-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .reading {
+      margin-bottom: 10px;
+    }
+
+    .reading strong {
+      display: block;
+      font-size: 11px;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .arabic {
+      font-size: 1.4em;
+      direction: rtl;
+      margin: 4px 0;
+      color: #ffffff;
+    }
+
+    .reading i {
+      font-size: 11.5px;
+      color: #cccccc;
+    }
+
+    .problem {
+      background-color: #111111;
+      color: #ffffff;
+      border-left: 3px solid #ffffff;
+      padding: 10px 14px;
+      margin-top: 8px;
+      font-size: 11.5px;
+      line-height: 1.6;
+    }
+
+    .problem strong {
+      color: #ffffff;
+    }
+
+    .website a {
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="page-header">
+  <h1>Przeciw Mahometanom</h1>
+</div>
+
+</div>
+
+<div class="container">
+
+
+  <table class="books-table" cellspacing="0" cellpadding="0">
+    <thead>
+      <tr>
+        <th>&#128100;</th>
+        <th>Tytuł / Autor</th>
+        <th>Wiek</th>
+        <th>Źródła</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td class="td-img">
+          <img src="hegel/1347515-352x500.jpg" alt="Williams-Paul">
+        </td>
+        <td class="td-title">
+          <strong>Refutatio Alcorani : in qua ad Mahumetanicae superstitionis radicem securis apponitur; &amp; Mahumetus ipse gladio suo iugulatur</strong>
+          <span class="author">Ludovicus Marracci</span>
+        </td>
+        <td class="td-century">XVII w.</td>
+        <td class="td-links">
+          <a href="https://archive.org/details/Alcoranus/Alcoranus-Textus-Maracci/" target="_blank"> Refutatio Alcorani</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="td-img">
+          <img src="hegel/123213213d.png" alt="Jules">
+        </td>
+        <td class="td-title">
+          <strong>Panteon sceptyków. Przegląd współczesnych teorii naukowych poświęconych genezie islamu</strong>
+          <span class="author">Marcin Grodzki</span>
+        </td>
+        <td class="td-century">XXI w.</td>
+        <td class="td-links">
+          <a href="https://www.academia.edu/36138562/" target="_blank"> Panteon sceptyków</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="td-img">
+          <img src="hegel/qran0_.jpg" alt="Auguste">
+        </td>
+        <td class="td-title">
+          <strong>Before Orthodoxy: The Satanic Verses in Early Islam</strong>
+          <span class="author">Shahab Ahmed</span>
+        </td>
+        <td class="td-century">XXI w.</td>
+        <td class="td-links">
+          <a href="https://almuslih.org/wp-content/uploads/2024/12/Ahmed-Sh-%E2%80%93-Before-Orthodoxy-%E2%80%93-The-Satanic-Verses-in-Early-Islam.pdf" target="_blank">Before Orthodoxy: The Satanic Verses in Early Islam</a>
+
+        </td>
+      </tr>
+
+            <tr>
+        <td class="td-img">
+          <img src="hegel/taq.jpg" alt="Auguste">
+        </td>
+        <td class="td-title">
+          <strong>Theodore Abu Qurrah (Eastern Christian Texts)</strong>
+          <span class="author">Theodore Abu Qurrah</span>
+        </td>
+        <td class="td-century">VIII w.</td>
+        <td class="td-links">
+          <a href="https://googlegroups.com/group/nascas/attach/30efc52719bd3/Lamoreaux%202005_Theodore%20Abu%20Qurrah.pdf" target="_blank">Theodore Abu Qurrah</a>
+
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <hr class="ornament">
+
+
+<div class="container">
+<h1>AlKoran</h1> 
+
+      <p><a href="https://e-koran.pl/wp-content/uploads/2021/04/Koran.pdf" target="_blank">Koran</a></p>
+    <hr>
+    <h1>Św. Jan Damasceński</h1>
+      <img src="hegel/211400785_n.jpg" alt="okladka" style="max-width: 300px;">
+<br>
+  Istnieje i do dziś panujący i zwodniczy kult izmaelitów, który jest zwiastunem Antychrysta. Wywodzi się od Izmaela – rodzonego dziecka Hagar i Abrahama – dlatego nazywają się oni i hagarenami i izmaelitami. Saracenami zaś nazywają się od słów „Sara” i „ogołocony” (kenos), dlatego że Hagar powiedziała do Anioła: «Sara wyrzuciła mnie ogołoconą» [por. Rdz16,8].
+
+Są oni bałwochwalcami i czczą gwiazdę poranną i Afrodytę, którą nazywają w swoim języku Chabar, co oznacza „Wielka”. Aż do czasów Herakliusza jawnie byli bałwochwalcami. A od tego czasu i dotychczas zjawił się wśród nich pseudoprorok zwany Mamedem [Mahomet]. On przez przypadek zapoznał się ze Starym i Nowym Testamentem i niby też był związany z jakimś ariańskim mnichem [być może mowa o nestoriańskim mnichu Bahirze – Grzegorzu albo Sergiuszu, który miał spotkać Mahometa jako dziecko i stwierdzić w nim znaki prorockie], a potem stworzył własną herezję. Zjednawszy sobie lud przez to, że wydawał się bogobojny, trąbił, iż Pismo z nieba zostało jemu zesłane przez Boga. Naskrobawszy zaś w swojej księdze jakieś rozprawy śmiechu warte, przekazał im je do czczenia.
+
+Mówi, że jedyny Bóg jest twórcą wszystkiego i nie jest ani zrodzony, ani rodzący [Koran, Sura 112]. Mówi, że Chrystus jest Słowem Boga i Jego Duchem, a też stworzeniem i niewolnikiem i że z Maryi – siostry Mojżesza i Aarona – bez nasienia został zrodzony [Sura 19; 4,169]. Albowiem Słowo Boga – mówi – wraz z Duchem wstąpiło w Maryję i zrodziło Jezusa będącego prorokiem i niewolnikiem Boga. Mówi, że nieprawi Żydzi chcieli Go ukrzyżować i schwytawszy Go ukrzyżowali Jego cień. Sam zaś Chrystus nie został ukrzyżowany – twierdzi on – ani nie umarł, Bóg bowiem wziął Go do siebie, do nieba, dlatego, iż Go kochał [Sura 4,156]. I to też mówi, że kiedy Chrystus wstąpił do nieba, Bóg Go zapytał, mówiąc: «Jezusie, Ty rzekłeś, że jesteś Synem Boga i Bogiem samym?»; i mówi, że odpowiedział Chrystus: «Bądź miłosierny dla mnie Panie! Ty wiesz, że nie mówiłem w ten sposób. I nie wyniosłem się ponad bycie tym niewolnikiem Twoim. Lecz występni ludzie napisali, że wyrzekłem takie słowa, i skłamali o mnie, i pobłądzili». I mówi, że odpowiedział mu Bóg: «Wiem, że nie mówiłeś tego słowa» [Sura 5,116n].
+
+I wiele innych bajecznych rzeczy jest w tym piśmie śmiechu wartych, co do którego ów pyszni się, że jemu zostało ono przekazane przez Boga. My zaś mówimy: «A kto jest świadkiem tego, że Bóg przekazał mu pismo; czy kto z proroków przepowiedział, że powstanie taki prorok?». I kiedy będą się kłopotać nad rozwiązaniem, powiemy, że Mojżesz otrzymał Prawo wtedy, gdy Bóg objawił się na górze Synaj przed obliczem całego ludu w obłokach i ogniu, ciemnościach i burzy, oraz że wszyscy prorocy od Mojżesza i po nim przepowiadali o przyjściu Chrystusa, że Bóg Chrystus i Syn Boży przyjdzie wcielony i zostanie ukrzyżowany, i zmartwychwstanie i że będzie sądzić żywych i umarłych. Powiemy więc im: «Dlaczego w ten sposób nie przyszedł prorok wasz, żeby inni o nim świadczyli? I dlaczego Bóg, który dał Prawo Mojżeszowi, wtedy gdy cały naród widział to na dymiącej górze, bez waszej obecności dał owo pismo – o którym mówicie, że je przekazał – żebyście i wy mieli pewność?». I odpowiadają, że Bóg czyni, co chce. Powiedzmy, że to i my wiemy, lecz pytamy, w jaki sposób pismo przyszło do waszego proroka – a oni odpowiadają, że pismo zeszło na niego z góry, kiedy spał. Odnośnie do tego powiemy im żart, że skoro spał, kiedy przyjął pismo, i nie odczuł działania, to na nim spełniło się przysłowie ludowe [„Pleciesz mi sny”]. I znowu zapytamy: «Dlaczego – chociaż wam poleca w piśmie bez świadków nic nie czynić i nie przyjmować – nie poprosiliście go, żeby sam najpierw potwierdził przez świadków, iż jest prorokiem i że od Boga przyszedł, i jakie pisma o nim świadczą?». Wstydząc się, milczą. Do nich słusznie powiemy: «Więc wy nie możecie pojąć żony bez świadków ani sprzedawać, ani nabywać i wy sami nie przyjmujecie bez świadków osła czy bydła. To wy otrzymujecie żonę, majątek, osły, bydło i pozostałe rzeczy przy świadkach. Tylko zaś wiarę i pismo bez świadków macie. Albowiem ten, kto wam to przekazał, nie ma potwierdzenia ani nie jest znany żaden świadek tego, lecz otrzymał to we śnie».
+
+Oni nazywają nas „koleżkami”, dlatego że – jak mówią – dodajemy do Boga kolegę, mówiąc, iż Chrystus jest Synem Boga i Bogiem. W stosunku do tego powiemy, że to Prorocy przekazali i Pisma – wy zaś, jak zapewniacie, przyjmujecie Proroków. Jeżeli więc źle mówimy, że Chrystus jest Synem Boga – to tego nas nauczyli i to nam przekazali. Niektórzy z nich mówią, że my, alegorycznie interpretując Proroków, im to przypisujemy. Inni zaś mówią, że Żydzi przez swą nienawiść zwiedli nas, pisząc jakby w imieniu Proroków, byśmy zginęli.
+
+Kiedy znowu do nich mówimy: «Kiedy mówicie, że Chrystus jest Słowem Bożym i Duchem, to dlaczego wymyślacie nam, że jesteśmy „koleżkami”? Albowiem Słowo i Duch nie istnieją oddzielnie do tego, w kim istnieją. Jeżeli więc istnieje w Bogu jako Jego Słowo, jasne jest, że jest Bogiem. Jeżeli zaś jest poza Bogiem, to według was Bóg jest „niemy” i „bezduszny”. Zatem zapobiegając „skolegowaniu” Boga – zarżnęliście Go. Lepiej by były dla was powiedzieć, że posiada kolegę, niż zarżnąć Go i sprowadzić do kamienia czy drzewa, czy do jakiegoś innego pozbawionego czucia przedmiotu. Takim więc sposobem wy nazywacie nas kłamliwie „koleżkami”, my zaś was nazywamy „rzeźnikami” Boga.
+
+Oczerniają nas jako bałwochwalców, bo czcimy krzyż, do którego mają wstręt. A my powiemy im: «Dlaczego ocieracie się o kamień, znajdujący się w waszej Kaabie [Kaaba znaczy „Dom Boga”. Uważa się, że została zbudowana przez Abrahama z pomocą Izmaela. Zajmuje ona najbardziej poczesne miejsce w Mekce. Opisywany natomiast w tekście kamień najprawdopodobniej stanowi relikt idolatrii Arabów z czasów przedislamskich. Prawdopodobnie jest to meteoryt.], i ściskając, całujecie go?». Niektórzy z was mówią, że na nim Abram współżył z Hagar, inni zaś, iż do niego [Abraham] przywiązał wielbłąda, mając zamiar ofiarować Izaaka [Rdz 22,6]. Odpowiadamy im: «Pismo mówi, że góra była lesista i było drewno do złożenia ofiary, z którego Abraham oddzielił wiązkę i położył Izaaka, i że osłu ze sługami pozostawił. Skąd więc wzięliście te głupstwa? Albowiem tam są gęste lasy i osły nie mogły przejść». Oni się wstydzą, a jednak mówią, że jest to kamień Abrahama. A zatem powiemy: «Niech to będzie kamień Abrahama, jak wy o tym bredzicie. Więc ściskacie go dlatego, że Abraham na nim współżył z żoną, czy dlatego, że wielbłąda do niego przywiązał – i nie wstydzicie się, lecz nas piętnujecie, iż oddajemy hołd krzyżowi Chrystusa, przez który zostały zniszczone siła demonów i diabelskie zwodzenie». To zaś, co oni nazywają kamieniem, jest głową Afrodyty, której oddają pokłon, nazywając ją Chabar. Na tym kamieniu aż do dziś uważnie przyglądającemu się ukaże się zarys rzeźby.
+
+Ten Mamed – jak powiedziałem – ułożył wiele bredni i każdej z nich nadał nazwę, jak np. pismo „Kobieta” [Sura 4], w którym ustanawia prawo jawnego brania czterech żon i jeżeli to byłoby możliwe, tysiąca nałożnic – tyle ile czyjaś ręka mogłaby utrzymać oprócz czterech żon. To zaś, że jedną, jeżeli zechcesz, możesz odpuścić, inną zaś – nabyć, on ustanowił z tej przyczyny, że miał druga zwanego Zejd. Ten miał młodą i piękną żonę, w której się zakochał Mamed. Kiedy więc oni siedzieli, rzekł Mamed: «Jest taka rzeczy, Bóg mi nakazał wziąć twoją żonę». Ten zaś odpowiedział: «Apostołem jesteś, czyń jak Bóg ci powiedział – weź moją żonę». Raczej zaś – jak wyżej powiedzieliśmy – rzekł Mamed do niego: «Bóg nakazał mi, żebyś odprawił twoją żonę». Ten zaś odprawił, a po kilku dniach Mamed powiedział: «Bóg nakazał mi, żebym teraz ją wziął». A następnie biorąc ją i cudzołożąc z nią, wydał takie prawo: «Ten, kto chce, niech odprawi żonę swoją. Jeżeli zaś po odprawieniu inny zwróci się do niej – niech ją poślubi, bo nie można wziąć jej w posiadanie, jeżeli nie zostanie poślubiona przez innego. Jeżeli zaś by brat odprawił – niech z nią ożeni się jego brat, jeżeli on tego chce» [Sura 2,225]. W tym samym piśmie takie dał polecenia: «Uprawiaj ziemię, którą dał tobie Bóg, i upiększaj ją, i czyń to i tamto» [Sura 2,223] – żeby nie wszystko mówić tak wstrętnie, jak tamto prawo.
+
+Znowu jest pismo „Wielbłądzica Boża” [pismo to nie stanowi części Koranu], o której mówi, że była wielbłądzicą Boga i wypiła całą rzekę, i nie mogła przejść między dwiema górami, bo się nie zmieściła. Lud więc – mówi – przebywał w tym miejscu i jednego dnia on pił wodę, a następnego – wielbłądzica. Wypiwszy zaś wodę, ożywiła go, dając mleko zamiast wody. Powstali więc owi mężowie, a że byli źli, zabili wielbłądzicę. Ona zaś miała płód – małą wielbłądzicę, która – jak mówi – kiedy matka została zgładzona, zawołała do Boga, a Ten wziął ją do siebie. W stosunku do tego powiemy: «Skąd ta wielbłądzica?». I odpowiedzą, że od Boga. I powiemy: «Czy była ona pokryta przez innego wielbłąda?». Oni mówią, że nie. Jak więc – pytamy – urodziła? Widzimy bowiem, że wielbłąd wasz bez ojca, bez matki i bez rodowodu. Urodziwszy zaś małą wielbłądzicę, zło ucierpiała, a ten, który ją pokrył, nie pojawia się, a małą wielbłądzica została wzięta do nieba. Prorok więc wasz, z którym jak mówicie – Bóg rozmawiał, czemuż to nie dowiedział się o wielbłądzicy, gdzie ona się pasła i kto poił ją mlekiem? Czy ona sama przypadkiem, spotkawszy złych ludzi, nie została zabita jak jej matka, czy może weszła do raju jako wasz zwiastun i z niej dla was będzie rzeka mleka, o której bredzicie?
+
+Mówicie bowiem, że w raju dla was ciekną trzy rzeki: wody, wina i mleka. Jeżeli zwiastun wasz – wielbłądzica – znajduje się poza rajem, to jasne jest, że wyschła z głodu i pragnienia lub że inni jej mleko wykorzystują. I daremnie tedy prorok wasz się wynosi jako przestający z Bogiem, bo tajemnica wielbłądzicy nie została mu odkryta. Jeżeli zaś ona znajduje się w raju, to znowu pije wodę i z braku wody wychniecie pośród rozkoszy raju. Jeżeli zaś z rzeki rajskiej będziecie chcieli napić się wina bez wody – wypiła bowiem całą wodę wielbłądzica – pijąc niezmieszane wino, rozpalicie się i pod wpływem upicia wpadniecie w obłęd i położycie się spać. Po śnie zaś z ciężką głową i zatruci winem zapomnicie o przyjemnościach raju. Jak więc prorok wasz nie pomyślał, żeby nie przydarzyło się to wam w raju rozkoszy ani nie pomyślał o wielbłądzicy, gdzie ona teraz przebywa? Lecz wy nie zapytaliście go, kiedy opowiadał wam otumaniony snami o trzech rzekach. My zaś wyraźnie oznajmiamy, że podziwiana przez was wielbłądzica pierwsza przed wami weszła do dusz osłów, gdzie i wy będziecie żyć jak bydło. Tam zaś panuje ciemność ostateczna i kara nieskończona, ogień budzący, robak nieśpiący i demony piekielne.
+
+Znowu mówi Mamed w piśmie „Stół zastawiony” o tym, że Chrystus prosił Boga o posiłek i był mu dany. Bóg – mówi – rzekł do niego: «Dałem Ci i tym, co z Tobą, posiłek nieśmiertelny» [Sura 5,114n].
+
+Znowu pismo „Byczek” [Sura 2] opowiada inne bajki śmiechu warte, które z powodu ich wielkiej liczby trzeba opuścić. Mamed ustanowił, aby saraceni z żonami przechodzili obrzezanie i zakazał im czczenia szabatów oraz chrztu. Polecił im jeść pewne rzeczy spośród tych, których jedzenie jest zakazane w prawie [Mojżeszowym], od innych zaś polecił się powstrzymywać, a picia wina zakazał całkowicie. 
+- Περὶ αἱρέσεων (O herezjach)
+  
+  <br>  <br>
+  <h1>Św. Tomasz z Akwinu - Summa contra gentiles</h1>
+  Ci zaś, którzy wprowadzili błędy sekciarskie, postępowali drogą przeciwną, jak to
+widać u Mahometa; zwabiał on ludy obietnicami rozkoszy zmysłowych, do których
+pragnienia podnieca pożądliwość ciała. Mahomet podawał także przykazania
+odpowiednie do obietnic, popuszczając cugli pożądliwości cielesnej, a temu ludzie
+zmysłowi łatwy dają posłuch. Jako dowody prawdy zaś podawał tylko takie, które każdy
+średnio mądry człowiek może poznać rozumem przyrodzonym. Co więcej, prawdy,
+których nauczał, pomieszał z wieloma bajkami i zupełnie błędnymi naukami. Nie ukazał
+też żadnych znaków nadprzyrodzonych, które jedynie dają odpowiednie świadectwo
+natchnieniu Bożemu, gdyż działanie widzialne, takie jakie może pochodzić tylko od
+Boga, wykazuje, że nauczyciel prawdy otrzymuje natchnienie niewidzialne. Powiedział
+zaś, że jest posłany z mocą zbrojną, a takich znaków nie brak także rozbójnikom i
+tyranom. Poza tym ci, którzy uwierzyli z początku Mahometowi, nie byli jakimiś
+uczonymi, wykształconymi w sprawach boskich i ludzkich, lecz byli to ludzie dzicy, prze-
+bywający na pustyniach i nieznający żadnej nauki boskiej. Wykorzystując tłum takich
+ludzi i przemoc zbrojną, zmusił innych do poddania się jego prawu. Żadne też proroctwa
+Boże poprzedzających go proroków nie dają mu świadectwa — przeciwnie, on raczej
+spaczył prawie wszystkie nauki Starego i Nowego Testamentu opowiadaniem pełnym
+bajek, co widzi każdy, kto bada jego prawo. Dlatego też chytrze nie zalecił swym
+wyznawcom czytania ksiąg Starego i Nowego Testamentu, by mu nie wykazali fałszu.
+I tak widać, że ci, którzy dają wiarę jego słowom, wierzą lekkomyślnie.
+<br>
+(Tomasz krytykuje braki w <strong>motiva credibilitatis</strong>.)
+  <br>  <br>
+  <h1>Linki</h1>
+  <hr>
+   <p><a href="https://answering-islam.org/" target="_blank">answering-islam.org</a></p>
+   
+      <p><a href="https://www.youtube.com/playlist?list=PL1mr9ZTZb3TWkTchGzin3nek07QiT1eTT" target="_blank">Debunking Islam -  InspiringPhilosophy</a></p>
+
+  <hr>
+</div>
+
+<div class="grid">
+
+    <div class="card">
+      <h2>Ewangelia i Tora są potwierdzone i niewypaczone, istniejące w VII wieku według Koranu</h2>
+      <div class="verse-chain">
+        <div class="verse">
+          <div>
+            <div class="verse-ref">5:47</div>
+            <div class="verse-text">Niech lud Ewangelii sądzi zgodnie z tym, co w niej zapisano, a ci, którzy nie sądzą według objawienia Boga, są grzesznikami.</div>
+          </div>
+        </div>
+        <div class="arrow-down">↓</div>
+        <div class="verse verse-extra">
+          <div>
+            <div class="verse-ref">2:41</div>
+            <div class="verse-text">Uwierzcie w to, co zesłałem, potwierdzając to, co już było zesłane wcześniej i nie bądźcie pierwszymi, którzy w to nie uwierzą. Nie
+sprzedawajcie Moich znaków za marną cenę i tylko Mnie się bójcie. </div>
+          </div>
+        </div>
+        <div class="arrow-down">↓</div>
+        <div class="verse verse-extra">
+          <div>
+            <div class="verse-ref">2:89</div>
+            <div class="verse-text">A kiedy Bóg objawił im księgę, potwierdzającą istotę tego, co
+już posiadali – a przedtem modlili się o zwycięstwo nad niewierzącymi
+– i kiedy przyszło do nich to, o czym wiedzieli, że jest prawdą, odrzucili
+to. Niech przeklnie Bóg niewiernych.</div>
+          </div>
+        </div>
+        <div class="arrow-down">↓</div>
+        <div class="verse verse-extra">
+          <div>
+            <div class="verse-ref">3:3</div>
+            <div class="verse-text">On zesłał tobie (Muhammadzie) Księgę (Koran) zawierającą
+prawdę i potwierdzającą to, co było przed nią. To On przedtem zesłał
+Torę i Ewangelię,</div>
+          </div>
+        </div>
+        <div class="arrow-down">↓</div>
+        <div class="verse verse-extra">
+          <div>
+            <div class="verse-ref">4:47</div>
+            <div class="verse-text">O ludu księgi! Wierzcie w to, co zostało wam zesłane jako potwierdzenie prawdziwości tego, o czym już wiedzieliście. Uwierzcie, zanim odmienię wasze twarze i skieruję je w innym kierunku, zanim was
+przeklnę jak tych, którzy naruszali szabat. Rozkaz Boga zawsze musi być
+wypełniony.</div>
+          </div>
+        </div>
+        <div class="arrow-down">↓</div>
+        <div class="verse verse-extra">
+          <div>
+            <div class="verse-ref">5:43</div>
+            <div class="verse-text">Ale dlaczego oni przychodzą do ciebie, abyś ich rozsądził, skoro mają Torę, w której jest spisane Prawo Boga? A potem i tak mają
+wątpliwości, bo są niewierzący.</div>
+          </div>
+        </div>
+        <div class="arrow-down">↓</div>
+        <div class="verse verse-extra">
+          <div>
+            <div class="verse-ref">5:47</div>
+            <div class="verse-text">Niech lud Ewangelii sądzi zgodnie z tym, co w niej zapisano,
+a ci, którzy nie sądzą według objawienia Boga, są grzesznikami.</div>
+          </div>
+        </div>
+        <div class="extra-verses-box">
+          <strong>Inne wersety potwierdzające Torę i Ewangelię w VII wieku:</strong>
+          2:91, 3:50, 5:44, 5:46, 5:66, 5:68, 5:110, 6:92, 10:37, 10:94, 12:111, 35:31, 35:46, 46:12, 46:30
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <div class="card">
+        <h2>Niezmienność słów Allaha</h2>
+        <div class="incorr-chain">
+          <div class="incorr-verse">
+            <div class="ref">6:115</div>
+            <div class="quote">A słowo twego Pana to wypełnienie prawdy i sprawiedliwości. Nikt nie może zmienić tych słów. Bóg jest bowiem Wszechsłyszący
+i Wszechwiedzący</div>
+          </div>
+          <div class="incorr-arrow">↓</div>
+          <div class="incorr-verse">
+            <div class="ref">5:44</div>
+            <div class="quote">My zesłaliśmy Torę, w której są wyraźne znaki postępowania.
+Na mocy Tory, całkowicie poddani (Bogu) prorocy byli sędziami dla
+wyznających judaizm. Rabini i uczeni w prawie mężowie także sądzili
+według tego, co zostało zapisane w księdze Boga, byli jej świadkami.
+Dlatego nie bójcie się ludzi, a bójcie się Mnie. Nie sprzedawajcie Mojego Prawa za mizerną cenę. Ci, którzy osądzają nie według tego, co
+nakazał Bóg, są niewierzący.</div>
+          </div>
+          <div class="incorr-arrow">↓</div>
+          <div class="incorr-verse">
+            <div class="ref">5:46</div>
+            <div class="quote">Posłaliśmy po nich Jezusa, który wypełnił słowo zapisane
+w Torze i daliśmy mu Ewangelię, mającą przewodnictwo, światło i napomnienie dla wierzących i potwierdzając to, co zapisano wcześniej.</div>
+          </div>
+          <div class="incorr-arrow">↓</div>
+          <div class="incorr-verse">
+            <div class="ref">18:27</div>
+            <div class="quote">Recytuj to, co zostało ci objawione z Księgi twojego Pana.
+Nikt nie może zmienić Jego słów. W Nim odnajdziesz jedyne schronienie.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Potwierdzenie u badaczy</h2>
+        <div class="scholars">
+          <div class="scholar">
+            <div class="name">Ibn Kathir, Tafsir Ibn Kathir do Q5:47</div>
+            <div class="desc">Przyznaje, że Injil (Ewangelia) istniała w nienaruszonym stanie za życia Mahometa i potwierdza boską ochronę, pośrednio zaprzeczając współczesnym twierdzeniom o skażeniu tekstu.</div>
+          </div>
+          <div class="scholar">
+            <div class="name">Al-Tabari, Tafsir al-Tabari (Tom 6, str. 34, Sura 6:115)</div>
+            <div class="desc">Potwierdza słowa Allaha jako niezmienialne, co sugeruje, że poprzednie pisma nie zostały zmienione tekstowo.</div>
+          </div>
+          <div class="scholar">
+            <div class="name">Daniel Wallace i Bruce Metzger</div>
+            <div class="desc">Potwierdzają stabilność tekstualną sprzed czasów islamu. Potwierdzają rozległą wiarygodność i zachowanie rękopisów poprzedzających islam.</div>
+          </div>
+          <div class="scholar">
+            <div class="name">Imam Fakhr al-Din al-Razi, Tafsir al-Kabir, Sura 3:55</div>
+            <div class="desc">Interpretuje dominację naśladowców Jezusa dosłownie, pośrednio potwierdzając wiarygodność i siłę ich doktryny.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <div class="card">
+        <h2>Gdy muzułmanie używają 3:78 lub 2:75-79, aby „udowodnić” skażenie pism:</h2>
+        <div class="mu-section">
+          <h3>2:75 i 3:78</h3>
+          <div class="mu-bullet">Mówi o grupie Żydów, którzy słyszeli słowa Allaha, a potem je wypaczyli.</div>
+          <div class="mu-bullet">Grupa nieznająca Pisma jest potępiona za fałszywe spisywanie go i sprzedawanie za niską cenę. Biada im za ich kłamstwa i zysk.</div>
+          <div class="mu-bullet">W przeciwieństwie do tego, 3:199 chwali tych, którzy nie sprzedają prawdy za cenę.</div>
+          <div class="mu-bullet">Niektórzy Żydzi są oskarżani o zniekształcanie Pisma swoimi językami, a nie o zmianę samego tekstu.</div>
+          <div class="mu-bullet">To podkreśla ustne przeinaczenie, a nie skażenie tekstu.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Koran potwierdza autorytatywność chrześcijaństwa</h2>
+        <div class="affirm-grid">
+          <div class="affirm-item">
+            <div class="ref">61:14</div>
+            <div class="txt">Wierzący! Bądźcie pomocnikami Boga. Jezus, syn Marii,
+powiedział do swoich uczniów: „Kto będzie moim pomocnikiem na
+drodze Boga?”. Uczniowie odpowiedzieli: „My jesteśmy pomocnikami
+(na drodze) Boga”. I tak, część z dzieci Izraela uwierzyła, a część pozostała niewierna. Wtedy wzmocniliśmy tych, którzy uwierzyli, przeciwko ich wrogom i to oni zwyciężyli.</div>
+          </div>
+          <div class="affirm-item">
+            <div class="ref">3:55</div>
+            <div class="txt">Wspomnij, jak przemówił Bóg: „O Jezusie! Wezmę cię do siebie i powołam cię do Siebie. Uwolnię cię od tych, którzy nie wierzą,
+a tych, którzy poszli za tobą, umieszczę aż do Dnia Sądu ponad niewiernymi. Wtedy wszyscy do Mnie powrócicie, a Ja rozsądzę w tym, co
+was poróżniło.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+</div>
+
+<p>
+W islamie istnieje kilka kanonicznych sposobów odczytu Koranu (qirāʾāt), uznawanych za autentyczne.
+Niektóre z nich różnią się nie tylko wymową, lecz również samym tekstem arabskim.
+Poniższe przykłady pokazują warianty, które zmieniają znaczenie zdań, dlatego są często przywoływane
+w dyskusjach nad twierdzeniem, że istnieje jeden idealnie zachowany tekst Koranu.
+</p>
+
+<div class="case">
+<h2>Sura 17:102</h2>
+
+<div class="reading">
+<strong>Hafs, Warsh i większość qirāʾāt</strong>
+<div class="arabic">لَقَدْ عَلِمْتَ</div>
+<i>"Ty z pewnością wiesz..."</i>
+</div>
+
+<div class="reading">
+<strong>Al-Kisāʾī</strong>
+<div class="arabic">لَقَدْ عَلِمْتُ</div>
+<i>"Ja z pewnością wiem..."</i>
+</div>
+
+<div class="problem">
+<strong>Problem:</strong><br>
+<b>Ty wiesz</b> ↔ <b>Ja wiem</b>.<br>
+Zmienia się osoba mówiąca.
+</div>
+</div>
+
+<div class="case">
+<h2>Sura 37:12</h2>
+
+<div class="reading">
+<strong>Hafs, Warsh i większość qirāʾāt</strong>
+<div class="arabic">بَلْ عَجِبْتَ</div>
+<i>"Ty się dziwisz."</i>
+</div>
+
+<div class="reading">
+<strong>Hamza, Al-Kisāʾī, Khalaf al-ʿĀshir</strong>
+<div class="arabic">بَلْ عَجِبْتُ</div>
+<i>"Ja się dziwię."</i>
+</div>
+
+<div class="problem">
+<strong>Problem:</strong><br>
+<b>Mahomet się dziwi</b> ↔ <b>Allah się dziwi</b>.<br>
+Zmienia się podmiot wypowiedzi.
+</div>
+</div>
+
+<div class="case">
+<h2>Sura 3:146</h2>
+
+<div class="reading">
+<strong>Hafs, Warsh i większość qirāʾāt</strong>
+<div class="arabic">وَكَأَيِّن مِّن نَّبِيٍّ قَاتَلَ</div>
+<i>"Wielu proroków walczyło."</i>
+</div>
+
+<div class="reading">
+<strong>Ibn Kathīr, Abū ʿAmr, Yaʿqūb</strong>
+<div class="arabic">وَكَأَيِّن مِّن نَّبِيٍّ قُتِلَ</div>
+<i>"Wielu proroków zostało zabitych."</i>
+</div>
+
+<div class="problem">
+<strong>Problem:</strong><br>
+<b>Walczyli</b> ↔ <b>Zostali zabici</b>.<br>
+Zmienia się opis wydarzenia.
+</div>
+</div>
+
+</body>
+</html>

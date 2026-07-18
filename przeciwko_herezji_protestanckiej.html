@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Przeciwko herezji protestanckiej</title>
+  <link href="mot.css" rel="stylesheet" type="text/css" media="all">
+      <link rel="icon" href="hegel/ikonka.ico" type="image/x-icon">
+
+  <style>
+
+    body {
+      background-color: #f0ede4;
+      font-family: "Times New Roman", Times, serif;
+      color: #111;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ===== NAGŁÓWEK STRONY ===== */
+    #page-header {
+      background-color: #2a1a0e;
+      color: #e8d9b0;
+      text-align: center;
+      padding: 14px 10px 10px;
+      border-bottom: 4px ridge #8b6914;
+    }
+
+    #page-header h1 {
+      margin: 0 0 4px 0;
+      font-size: 1.7em;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 0 #000;
+    }
+
+    #page-header p.subtitle {
+      margin: 0;
+      font-size: 0.92em;
+      color: #c9b87a;
+      font-style: italic;
+    }
+
+    /* ===== PASEK NAWIGACJI ===== */
+    #navbar {
+      background-color: #3d2b10;
+      text-align: center;
+      padding: 5px;
+      border-bottom: 2px solid #8b6914;
+    }
+
+    #navbar a {
+      color: #f5d98b;
+      font-size: 0.85em;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    #navbar a:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
+
+    /* ===== KONTENER GŁÓWNY ===== */
+    .container {
+      max-width: 820px;
+      margin: 18px auto;
+      padding: 0 10px;
+    }
+
+    /* ===== SEKCJA WSTĘPU ===== */
+    #intro-box {
+      background: #fff8e8;
+      border: 2px inset #8b6914;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+      font-size: 0.92em;
+    }
+
+    #intro-box p {
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    /* ===== TABELA KART ===== */
+    .books-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 2px solid #7a5c1e;
+    }
+
+    .books-table thead tr {
+      background-color: #2a1a0e;
+      color: #e8d9b0;
+      text-align: left;
+    }
+
+    .books-table thead th {
+      padding: 7px 10px;
+      font-size: 0.85em;
+      font-weight: bold;
+      border-right: 1px solid #5a3a0e;
+      letter-spacing: 0.5px;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    .books-table thead th:last-child {
+      border-right: none;
+    }
+
+    .books-table tbody tr {
+      border-bottom: 1px solid #c9a85c;
+      vertical-align: top;
+    }
+
+    .books-table tbody tr:nth-child(odd) {
+      background-color: #fffdf5;
+    }
+
+    .books-table tbody tr:nth-child(even) {
+      background-color: #f5eed9;
+    }
+
+    .books-table tbody tr:hover {
+      background-color: #faedc0;
+    }
+
+    .books-table td {
+      padding: 8px 10px;
+      font-size: 0.9em;
+      border-right: 1px solid #d4b870;
+      vertical-align: middle;
+    }
+
+    .books-table td:last-child {
+      border-right: none;
+    }
+
+    /* kolumna ze zdjęciem */
+    .td-img {
+      width: 200px;
+      text-align: center;
+    }
+
+    .td-img img {
+      width: 158px;
+      height: 172px;
+      object-fit: cover;
+      border: 2px ridge #8b6914;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* kolumna tytułu */
+    .td-title {
+      width: 42%;
+    }
+
+    .td-title strong {
+      display: block;
+      font-size: 1em;
+      margin-bottom: 2px;
+      color: #1a0e00;
+    }
+
+    .td-title span.author {
+      color: #5a3a0e;
+      font-style: italic;
+      font-size: 0.88em;
+    }
+
+    /* kolumna wieku */
+    .td-century {
+      width: 80px;
+      text-align: center;
+      color: #5a3a0e;
+      font-style: italic;
+      font-size: 0.88em;
+    }
+
+    /* kolumna linków */
+    .td-links {
+      width: 22%;
+    }
+
+    .td-links a {
+      display: block;
+      color: #003399;
+      font-size: 0.85em;
+      text-decoration: underline;
+      margin-bottom: 3px;
+      word-break: break-word;
+    }
+
+    .td-links a:visited {
+      color: #551a8b;
+    }
+
+    .td-links a:hover {
+      color: #cc0000;
+    }
+
+    /* ===== STOPKA ===== */
+    #page-footer {
+      text-align: center;
+      margin: 20px 0 10px;
+      font-size: 0.78em;
+      color: #6b4c1e;
+      border-top: 2px solid #8b6914;
+      padding-top: 8px;
+    }
+
+    /* ===== SEPARATOR ===== */
+    hr.ornament {
+      border: none;
+      border-top: 2px ridge #8b6914;
+      margin: 14px 0;
+    }
+    
+    .przyp-box {
+      background-color: #000000; 
+      color: #ffffff;           
+      border-left: 5px solid #fc69ff; 
+      padding: 15px 20px;
+      margin: 20px 0;
+      line-height: 1.6;
+      font-style: italic;
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+    }
+
+    .przyp-box a {
+      color: #f5d98b;
+      text-decoration: underline;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+<div id="page-header">
+  <h1>Przeciwko herezji protestanckiej</h1>
+</div>
+
+</div>
+
+<div class="container">
+
+
+  <table class="books-table" cellspacing="0" cellpadding="0">
+    <thead>
+      <tr>
+        <th>&#128100;</th>
+        <th>Tytuł / Autor</th>
+        <th>Wiek</th>
+        <th>Źródła</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td class="td-img">
+          <img src="hegel/bellarmin.jpg" alt="bellarmin">
+        </td>
+        <td class="td-title">
+          <strong>Disputationes de Controversiis Christianae Fidei</strong>
+          <span class="author">Robert Bellarmin<br></span>
+        </td>
+        <td class="td-century">XVII w.</td>
+        <td class="td-links">
+          <a href="https://isidore.co/CalibreLibrary/Bellarmine,%20St.%20Robert,%20S.J.,%201542-1621/" target="_blank">Disputationes de Controversiis Christianae Fidei</a>
+          <br>
+          <a href="https://lubimyczytac.pl/autor/159129/sw-robert-bellarmin" target="_blank">Część kontrowersji została oficjalnie przetłumaczona</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="td-img">
+          <img src="hegel/Retrato-del-padre-francisco-suarez-valladolid-s.-xvii(1).png" alt="suarez">
+        </td>
+        <td class="td-title">
+          <strong>Defensio Fidei Catholicae et Apostolicae contra Errores Anglicanae Sectae</strong>
+          <span class="author">Franciscus Suárez</span>
+        </td>
+        <td class="td-century">XVII w.</td>
+        <td class="td-links">
+          <a href="https://isidore.co/CalibreLibrary/Suarez,%20Francisco,%20S.J.,%201548-1617/Defense%20of%20the%20Catholic%20and%20Apostolic%20Faith%20against%20the%20Errors%20of%20Anglicanism%20(9169)/" target="_blank">Defensio Fidei Catholicae et Apostolicae [EN]</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="td-img">
+          <img src="hegel/braciawal.png" alt="braciawal">
+        </td>
+        <td class="td-title">
+          <strong>Tractatus Generales de Controversiis Fidei</strong>
+          <span class="author">Adrianus de Walenburch et Petrus de Walenburch</span>
+        </td>
+        <td class="td-century">XVII w.</td>
+        <td class="td-links">
+          <a href="https://books.google.pl/books?id=zDxZmeEttyUC&printsec=frontcover&hl=pl#v=onepage&q&f=false" target="_blank">Tractatus Generales de Controversiis Fidei TOMUS I</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="td-img">
+          <img src="hegel/Johann_Baptist_Franzelin.jpg" alt="Johann Baptist Franzelin">
+        </td>
+        <td class="td-title">
+          <strong>Tractatus de Divina Traditione et Scriptura</strong>
+          <span class="author">Johann Baptist Franzelin</span>
+        </td>
+        <td class="td-century">XIX w.</td>
+        <td class="td-links">
+          <a href="https://isidore.co/CalibreLibrary/Franzelin,%20John%20Baptist,%20S.J_/Tractatus%20de%20divina%20traditione%20et%20scriptura%20(7736)/Tractatus%20de%20divina%20traditione%20et%20scriptur%20-%20Franzelin,%20John%20Baptist,%20S.J_.pdf" target="_blank">Tractatus de Divina Traditione et Scriptura</a>
+
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <hr class="ornament">
+
+
+</div>
+
+<div class="container">
+Natchnienie jest nadprzyrodzonym psychologicznym faktem w umyśle człowieka, który to fakt, podobnie jak inne fakty wewnętrzne znane bezpośrednio tylko Bogu, znany jest jedynie osobie natchnionej... Dlatego natchnienie nie może zostać poznane przez innych ludzi inaczej, jak tylko poprzez jego skutki zewnętrzne albo przez świadectwo godne wiary.
+Skutkiem zewnętrznym natchnienia, o którym mówimy, jest nic innego jak samo pisanie i sama napisana księga. Nie ma jednak w niej żadnego wewnętrznego znamienia, które samo przez się ujawniałoby natchnienie jako przyczynę konieczną...
+Dlatego fakt natchnienia nie może być poznany przez innych inaczej, jak tylko przez świadectwo godne wiary.
+<br>
+<h3>TEZA VIII. Zasady protestantyzmu sprzeciwiają się dowodowi kanonu Pisma Świętego, który zachowali Reformatorzy. </h3>
+
+«U protestantów co do owego świadectwa Bożego, a przez to i co do ich całego kanonu Pism, jak tego wymaga fundament nauki wiary, nie może to być stwierdzone także na podstawie samej Tradycji, dopóki dopuszczają ją jedynie w tym sensie, który sami nazywają tradycją historyczną, a która cała ma być osądzana i sprawdzana według Pisma jako jedynej reguły wiary.»
+W swoich księgach symbolicznych tak zwani protestanci ortodoksyjni wyznają te trzy zasady: 1° że wszystkie i tylko te księgi, które mają w kanonie, należy uznawać za słowo Boże spisane i przez Boga natchnione; 2° że żadne świadectwo Boże nie zostało zachowane, ani nie mogło być zachowane, samą tylko Tradycją w taki sposób, aby na jej podstawie można było z pewnością orzec o jakimś dogmacie i aby ten dogmat stanowił przedmiot wiary; 3° że Tradycja co do dogmatów i co do rozumienia słowa Bożego może być dopuszczona jedynie jako historyczna, w tym sensie, że z Tradycji jako ze świadectwa historycznego dowiadujemy się, jak słowo Boże było rozumiane przez chrześcijan w różnych epokach; sama zaś ta Tradycja z siebie nie ma żadnej powagi, lecz musi być przez każdego badana i osądzana według jedynej normy, którą jest Pismo.
+Niemniej jednak: ci sami protestanci, przynajmniej w większości, gdy dyskutują z antychrystami, których mają w swojej wspólnocie, tam, gdzie żąda się od nich racji, dla której wszystkie te księgi uznają za kanoniczne jako natchnione, odwołują się do Tradycji, ponieważ widzą, że nie otwiera się przed nimi żadna inna droga dowodu.
+Twierdzimy zatem, że dowodu tego przeprowadzić nie można, jeśli nie odrzuci się zasad, które protestanci ustanowili jako fundamentalne, i nie przyjmie się katolickiej zasady Tradycji; a tym samym, że z zasad protestantyzmu nie otwiera się żadna droga do wykazania natchnienia ksiąg Nowego Testamentu, przynajmniej większości z nich, które to księgi jednak uznają za słowo Boże natchnione jako jedyną regułę wiary.
+Istotnie, według ich zasad Tradycja podaje jedynie opinię dawnych chrześcijan i to jedno może uczyć, że wszystkie te księgi były uważane przez dawny Kościół za należące do Pisma Świętego i za natchnione. Czy jednak ta opinia starożytnych jest prawdziwa czy fałszywa, każdy musi to osądzić według jedynej normy słowa Bożego zawartego w Piśmie. Otóż gdyby tę jedyną normę osądzania rozumieli tylko negatywnie, to znaczy tak, że w Tradycji nie może być dopuszczone nic, co sprzeciwia się słowu Bożemu spisanemu byłoby to wprawdzie najzupełniej prawdziwe, lecz nie przyczynia się nic do owego dowodu, o który chodzi. Łatwo bowiem wykażą, że Tradycja dawnego Kościoła co do natchnienia ksiąg Nowego Testamentu, które mają w swoim kanonie, nie sprzeciwia się słowu spisanemu; lecz nie bardziej sprzeciwia się temu i Tradycja co do innych ksiąg, które jednak protestanci odrzucili; a ogólnie z samego tylko braku sprzeciwu wobec słowa spisanego nie mogą wnioskować o prawdziwości świadectwa, jakie zawiera się w Tradycji co do natchnienia ich ksiąg; prawda bowiem tego świadectwa musi być zaczerpnięta z powagi samej Tradycji. Wówczas zaś Pismo nie jest już jedyną normą, według której należałoby osądzać wszystkie dogmaty; ani też nie jest już prawdą, że nie może istnieć ani nie istnieje żaden dogmat przekazany samą tylko Tradycją, lecz porzuciwszy zasadę protestantyzmu, trzeba przyjąć katolicką zasadę Tradycji, a na jej podstawie przyjąć wraz z innymi dogmatami także cały kanon Pism zgodnie z Tradycją Kościoła katolickiego.
+Jeśli natomiast co rzeczywiście zawiera w sobie zasada protestantyzmu Pismo jest jedyną regułą wiary, a Tradycja i opinia dawnego Kościoła w ogólności, a co za tym idzie także Tradycja co do natchnienia ksiąg Nowego Testamentu, mają być osądzane według normy Pisma w taki sposób, że wymaga się pozytywnego świadectwa Pisma do udowodnienia dogmatu zawartego w Tradycji i w opinii dawnego Kościoła, a milczenie Pisma wystarcza do odrzucenia Tradycji i do uznania opinii dawnego Kościoła za fałszywą albo przynajmniej wątpliwą to wówczas rzeczywiście nie mogą oni udowodnić natchnienia tych ksiąg nawet na podstawie Tradycji. Pismo bowiem co do liczby i kanonu ksiąg Nowego Testamentu, które przyjęli protestanci, milczy zupełnie. Jeśli zatem milczenie Pisma jest racją do osądzenia Tradycji jako fałszywej lub wątpliwej, to dla nich nie może już mieć żadnej wartości ich własna owa Tradycja historyczna do udowodnienia natchnienia ksiąg Nowego Testamentu.
+Nadto, z tego samego, co wykazaliśmy w poprzedniej tezie że świadectwo o natchnieniu wszystkich ksiąg kanonu przyjętego także przez protestantów zostało zachowane aż do nas samą tylko Tradycją łatwo dostrzeżesz oczywistą sprzeczność w trzech zasadach Reformatorów, które na początku wymieniliśmy. W pierwszej bowiem zasadzie zawarte jest niejawnie twierdzenie tego, co w zasadzie drugiej jest jawnie zaprzeczone, mianowicie że istnieje jakiś dogmat przekazany samą tylko Tradycją. Podobnie w zasadzie trzeciej ustanawia się normę do osądzania Tradycji, przez którą wprost przeczy się wartości tejże Tradycji, jaka w zasadzie pierwszej jest niejawnie potwierdzana. Zob. o Tradycji, teza XX, n. III.
+
+<h1>SPIS TREŚCI</h1>
+
+<h2><i>Tractatus de Divina Traditione et Scriptura -  Johann Baptist Franzelin </i></h2>
+
+
+<h1>O Piśmie Świętym (<i>De Divinis Scripturis</i>)</h1>
+
+<h2>CZĘŚĆ I</h2>
+
+<h3>Rozdział I</h3>
+
+<ol type="I">
+    <li>Na podstawie Tradycji Bożej Starego Testamentu oraz nauki samego Chrystusa i Apostołów należy z jednakową wiarą uznawać za posiadające Boski autorytet wszystkie księgi i wszystkie ich części należące do Pisma Świętego.</li>
+    <li>Księgi Pisma Świętego są natchnione w taki sposób, że ich autorem jest sam Bóg.</li>
+    <li>Dokładniejsze wyjaśnienie pojęcia natchnienia przez analizę dogmatycznej formuły: <strong>„Bóg jest autorem ksiąg świętych”.</strong></li>
+    <li>Odrzucenie poglądu, że natchnienie polega jedynie na Bożej asystencji lub że jest tzw. natchnieniem następczym.</li>
+</ol>
+
+<h3>Rozdział II</h3>
+
+<ol type="I" start="5">
+    <li>O niewystarczalności argumentów wewnętrznych do wykazania natchnienia ksiąg.</li>
+    <li>O konieczności świadectwa, dzięki któremu poznajemy natchnienie.</li>
+    <li>O dwóch sposobach zachowania Bożego świadectwa dotyczącego ksiąg natchnionych.</li>
+    <li>Zasady protestantyzmu są sprzeczne z możliwością uzasadnienia kanonu Pisma Świętego zachowanego przez Reformatorów.</li>
+</ol>
+
+<h2>CZĘŚĆ II</h2>
+
+<h3>Rozdział I</h3>
+
+<ol type="I" start="9">
+    <li>Apostolska Tradycja dotycząca wszystkich ksiąg Pisma została ogłoszona przez Sobór Trydencki.</li>
+    <li>Apostolska Tradycja o kanonie ksiąg świętych zostaje wykazana na podstawie stałego i powszechnego użycia Kościoła.</li>
+    <li>Kanony i wyraźna nauka starożytności chrześcijańskiej ukazują Tradycję apostolską dotyczącą wszystkich Boskich ksiąg Starego Testamentu.</li>
+    <li>O pochodzeniu sporu dotyczącego ksiąg deuterokanonicznych Starego Testamentu.</li>
+    <li>Ojcowie IV i V wieku przedstawiali niepełne katalogi ksiąg Pisma nie jako zamknięte kanony, lecz jako wykazy wymagające uzupełnienia.</li>
+    <li>Wyjaśnienie trudności opartych na pismach autorów późniejszego okresu.</li>
+</ol>
+
+<h3>Rozdział II</h3>
+
+<ol type="I" start="15">
+    <li>Wszystkie księgi kanoniczne Nowego Testamentu zostały przekazane przez Apostołów.</li>
+    <li>Wyjaśnienie źródeł wątpliwości dotyczących ksiąg deuterokanonicznych Nowego Testamentu.</li>
+    <li>Wyjaśnienie wypowiedzi św. Hieronima o zwyczaju nieprzyjmowania Listu do Hebrajczyków i Apokalipsy.</li>
+</ol>
+
+<h2>CZĘŚĆ III</h2>
+
+<ol type="I" start="18">
+    <li>O dogmatycznym orzeczeniu dotyczącym autentycznej wersji lub wydania Pisma Świętego.</li>
+    <li>O zakresie autentyczności Wulgaty ogłoszonej przez Sobór Trydencki.</li>
+</ol>
+
+<hr>
+
+<h1>O Relacji Rozumu Ludzkiego do Wiary Bożej</h1>
+<p><i>De Habitudine Rationis Humanae ad Divinam Fidem</i></p>
+
+<h2>Rozdział I</h2>
+
+<ol type="I">
+    <li>O prawdzie.</li>
+    <li>O zgodzie umysłu, pewności i oczywistości.</li>
+</ol>
+
+<h2>Rozdział II</h2>
+
+<ol type="I">
+    <li>O prawdach oczywistych samych przez się.</li>
+    <li>O prawdach poznawanych za pośrednictwem innych.</li>
+    <li>O formalnej naturze wiary rozważanej ogólnie.</li>
+</ol>
+
+<h2>Rozdział III</h2>
+
+<ol type="I">
+    <li>O twierdzeniu niektórych, że wiara jest konieczna w ogóle, a zwłaszcza wiara w Objawienie, dla całego porządku naszego poznania.</li>
+    <li>O konieczności wiary wynikającej z konieczności istnienia społeczeństwa.</li>
+    <li>O konieczności Objawienia i odpowiadającej mu wiary nadprzyrodzonej dla poznania prawd potrzebnych do osiągnięcia celu ostatecznego w obecnym porządku wyniesienia człowieka.</li>
+    <li>Czy z poprzednich rozważań wynika konieczność Objawienia i wiary naturalnej przy założeniu czysto naturalnego stanu człowieka.</li>
+</ol>
+
+<h2>Rozdział IV</h2>
+
+<ol type="I">
+    <li>O stanie zagadnienia oraz o analizie aktu wiary.</li>
+    <li>O poznaniu autorytetu Boga.</li>
+    <li>O poznaniu istnienia Objawienia Bożego.</li>
+    <li>O wolności formalnego aktu wiary.</li>
+</ol>
+
+<h2>Rozdział V</h2>
+
+<ol type="I">
+    <li>O Kościele jako Boskim fakcie związanym ze słowami Objawienia.</li>
+    <li>O powszechnej poznawalności Objawienia Bożego przez Kościół.</li>
+    <li>O konieczności formalnego świadectwa Kościoła.</li>
+</ol>
+
+<h2>Rozdział VI</h2>
+
+<ol type="I">
+    <li>W jaki sposób autorytet nieomylnie przedstawiający naukę wiary jest normą oraz w jaki sposób nie jest normą w naukach przyrodzonych i racjonalnych.</li>
+    <li>O użyciu oraz podporządkowaniu nauk w wyjaśnianiu doktryny wiary.</li>
+</ol>
+
+<hr>
+
+<h1>Dodatek</h1>
+
+<h2>Przyczynek przeciw ograniczaniu natchnienia ksiąg świętych</h2>
+
+<p><i>Symbola contra restrictionem inspirationis librorum sacrorum</i></p>
+
+<ol type="I">
+    <li>Nowość i fałszywość tej doktryny.</li>
+    <li>Błędność przedstawianych argumentów.</li>
+</ol>
+     
+  
+</div>
+</body>
+</html>

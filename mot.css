@@ -1,0 +1,191 @@
+/* --- RESET I KOLOR DOMYŚLNY --- */
+* {
+    font-family: "Iosevka", monospace !important;
+    box-sizing: border-box;
+    color: #e8e4dc;   /* ← biały jako baza */
+}
+
+@font-face {
+    font-family: "Iosevka";
+    src: url("iosevka.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background-color: #050401;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiMwNTA0MDEiLz48cmVjdCB3aWR0aD0iMiIgaGVpZ2h0PSIyIiBmaWxsPSIjMDcwNjAzIi8+PC9zdmc+');
+    margin: 0;
+    padding: 10px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* --- EFEKT CRT --- */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    background: linear-gradient(
+        rgba(180, 90, 0, 0) 50%,
+        rgba(180, 90, 0, 0.025) 50%
+    );
+    background-size: 100% 3px;
+    animation: flicker 4s infinite;
+    opacity: 0.5;
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 0.5; }
+    45%       { opacity: 0.4; }
+    55%       { opacity: 0.32; }
+    60%       { opacity: 0.5; }
+}
+
+/* --- NAGŁÓWKI — pomarańcz tylko tu --- */
+h1 {
+    color: #e8a830 !important;
+    text-shadow: 0 0 18px rgba(200, 90, 0, 0.6),
+                 0 0 40px rgba(200, 90, 0, 0.2);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+h2 {
+    color: #d4920a !important;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+h3, h4, h5, h6 {
+    color: #c87820 !important;
+    letter-spacing: 2px;
+}
+
+/* --- NAGŁÓWEK STRONY --- */
+.header {
+    background: #070603;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #4a2808;
+    border-bottom: 2px solid #c85a00;
+    margin-bottom: 15px;
+    box-shadow: 3px 3px 0px #000000;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 36px;
+    letter-spacing: 7px;
+}
+
+.header-subtitle {
+    font-size: 11px;
+    margin-top: 6px;
+    color: #7a3a08 !important;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* --- KONTENERY I POSTY --- */
+.channel-box, .thread, .post {
+    border: 1px solid #2a1505;
+    border-right: 2px solid #020100;
+    border-bottom: 2px solid #020100;
+    background: #070603;
+    box-shadow: 3px 3px 0px #000000;
+    margin-bottom: 15px;
+}
+
+.channel-header {
+    background: #0c0906;
+    color: #d4920a !important;  /* pomarańcz na nagłówku kontenera */
+    padding: 7px 10px;
+    border-bottom: 1px solid #4a2808;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.channel-content, .post-content {
+    padding: 15px;
+    background: #050401;
+    border: 1px solid #1a0d03;
+    border-style: inset;
+    margin: 10px;
+    color: #e8e4dc !important;  /* biały */
+    line-height: 1.7;
+}
+
+/* --- ELEMENTY INTERFEJSU --- */
+.button-95 {
+    background: #0a0704;
+    border: 1px solid #4a2808;
+    border-bottom: 2px solid #1a0d03;
+    border-right: 2px solid #1a0d03;
+    padding: 8px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    margin: 15px auto;
+    display: block;
+    width: fit-content;
+    box-shadow: 2px 2px 0px #000000;
+    color: #e07a10 !important;  /* pomarańcz na przycisku */
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.button-95:active {
+    border-top: 2px solid #1a0d03;
+    border-left: 2px solid #1a0d03;
+    border-bottom: 1px solid #4a2808;
+    border-right: 1px solid #4a2808;
+    transform: translateY(1px);
+}
+
+.button-95:hover {
+    background: #120a05;
+    color: #e8a830 !important;
+    box-shadow: 0 0 14px rgba(200, 90, 0, 0.25);
+}
+
+/* Dropdown */
+select {
+    background: #050401;
+    color: #e8e4dc !important;  /* biały */
+    border: 1px solid #2a1505;
+    border-style: inset;
+    padding: 5px;
+    font-family: "Iosevka", monospace;
+}
+
+/* --- MARKDOWN I SPECJALNE --- */
+.greentext {
+    color: #c85a00 !important;  /* pomarańcz-rdza dla >cytatu */
+}
+
+code {
+    background: #030201;
+    color: #d4920a !important;  /* złoty na code */
+    padding: 2px 5px;
+    border: 1px solid #3a1e06;
+}
+
+.post-name {
+    color: #e8a830 !important;  /* pomarańcz na nick */
+    font-weight: bold;
+}
+
+/* --- SCROLLBAR --- */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #050401; }
+::-webkit-scrollbar-thumb { background: #2a1505; border: 1px solid #4a2808; }
+::-webkit-scrollbar-thumb:hover { background: #4a2808; }

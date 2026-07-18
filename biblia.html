@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblia</title>
+    <style>
+    @font-face {
+    font-family: "Iosevka";
+    src: url("iosevka.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    font-family: "Iosevka", monospace !important;
+    box-sizing: border-box;
+    color: #e8e4dc;
+}
+
+:root {
+    --primary: #ff6a00;
+    --accent: #ff9c40;
+    --dim: #7a3200;
+    --bg: #000000;
+    --panel: #0a0a0a;
+    --text: #e8e4dc;
+    --text-dim: #9a9690;
+    --error: #ff2222;
+    --glow: 0 0 6px #ff6a0088;
+    --border: #ff6a00;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,0.18) 0px,
+        rgba(0,0,0,0.18) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    pointer-events: none;
+    z-index: 9999;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    margin: 20px;
+}
+
+.search-box, #content, #word-search-box, #word-results {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    padding: 20px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    box-shadow: var(--glow), inset 0 0 20px rgba(255,106,0,0.04);
+}
+
+.input-row { display: flex; gap: 10px; }
+
+input {
+    flex: 1;
+    background: #000;
+    color: var(--accent);
+    border: 1px solid var(--dim);
+    padding: 8px 12px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+input:focus {
+    border-color: var(--primary);
+    box-shadow: var(--glow);
+}
+
+button {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 8px 18px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    transition: all 0.15s;
+}
+
+button:hover {
+    background: var(--primary);
+    color: #000;
+    box-shadow: var(--glow);
+}
+
+h2 {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--dim);
+    padding-bottom: 8px;
+    margin-top: 0;
+}
+
+.home-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.link-item {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 4px 0;
+    border-bottom: 1px solid #1a1a1a;
+    transition: 0.15s;
+}
+
+.link-item::before { content: "> "; color: var(--primary); }
+
+.link-item:hover {
+    color: var(--accent);
+    padding-left: 8px;
+    border-bottom-color: var(--dim);
+}
+
+.verse { display: block; margin-bottom: 12px; }
+
+.v-num {
+    display: inline-block;
+    min-width: 2.4em;
+    margin-right: 1.2em;
+    text-align: right;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.error {
+    background: #110000;
+    color: var(--error);
+    padding: 15px;
+    border: 1px solid var(--error);
+}
+
+#word-search-box h3 {
+    margin-top: 0;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.ws-options {
+    display: flex;
+    gap: 16px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 12px;
+    color: var(--text-dim);
+}
+
+.ws-options label { display: flex; align-items: center; gap: 5px; cursor: pointer; }
+
+.ws-options input[type="checkbox"] {
+    width: auto;
+    flex: none;
+    accent-color: var(--primary);
+}
+
+.ws-options select {
+    background: #000;
+    color: var(--accent);
+    border: 1px solid var(--dim);
+    padding: 4px 8px;
+    font-size: 12px;
+}
+
+.ws-hint {
+    margin-top: 8px;
+    font-size: 11px;
+    color: var(--dim);
+    letter-spacing: 1px;
+}
+
+#word-results { display: none; }
+
+.wr-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.wr-count {
+    color: var(--dim);
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.wr-entry {
+    display: flex;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid #1a1a1a;
+    cursor: pointer;
+    transition: background 0.1s;
+}
+
+.wr-entry:hover {
+    background: rgba(255,106,0,0.07);
+    padding-left: 6px;
+}
+
+.wr-ref {
+    min-width: 130px;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 12px;
+    flex-shrink: 0;
+    letter-spacing: 1px;
+}
+
+.wr-text {
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.wr-highlight {
+    background: rgba(255,106,0,0.25);
+    color: var(--accent);
+    padding: 0 2px;
+}
+
+.wr-loading {
+    text-align: center;
+    padding: 20px;
+    color: var(--primary);
+    letter-spacing: 2px;
+    animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.wr-pagination {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.wr-pagination button {
+    padding: 4px 10px;
+    font-size: 11px;
+    background: transparent;
+    color: var(--text-dim);
+    border: 1px solid #333;
+    letter-spacing: 1px;
+}
+
+.wr-pagination button.active {
+    color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: var(--glow);
+}
+    </style>
+    
+        <link rel="icon" href="hegel/ikonka.ico" type="image/x-icon">
+
+</head>
+<body>
+
+    <div class="search-box">
+        <div class="input-row">
+            <input type="text" id="q" placeholder="Np. 2 P 2:3, Rdz 1:1, 1 Kor 13" autocomplete="off">
+            <button onclick="runSearch()">Szukaj</button>
+        </div>
+    </div>
+
+    <div id="content">
+        <p style="text-align: center; color: #999;">Ładowanie danych...</p>
+    </div>
+
+    <!-- ===== WYSZUKIWANIE SŁÓW ===== -->
+    <div id="word-search-box">
+        <h3>🔍 Szukaj po słowach</h3>
+        <div class="input-row">
+            <input type="text" id="wq" placeholder='...' autocomplete="off">
+            <button onclick="runWordSearch()">Szukaj</button>
+        </div>
+        <div class="ws-options">
+            <label>
+                <input type="checkbox" id="ws-exact"> Całe słowo
+            </label>
+            <label>
+                <input type="checkbox" id="ws-case"> Wielkość liter
+            </label>
+            <label>
+                Maks. wyników:
+                <select id="ws-limit">
+                    <option value="50">50</option>
+                    <option value="100" selected>100</option>
+                    <option value="250">250</option>
+                    <option value="500">500</option>
+                    <option value="0">Wszystkie</option>
+                </select>
+            </label>
+        </div>
+        <div class="ws-hint">
+            Wpisz <strong>"tekst w cudzysłowie"</strong> aby szukać dokładnej frazy.
+            Bez cudzysłowu: szukane są wersety zawierające <em>wszystkie</em> podane słowa.
+        </div>
+    </div>
+
+    <div id="word-results"></div>
+
+    <script>
+let bibleXml = null;
+let booksMap = [];
+
+let allVerses = null;
+
+const myLinks = [
+    { label: "Cornelius a Lapide", url: "https://www.ecatholic2000.com/lapide/" },
+    { label: "Cornelius a Lapide Maszynowo", url: "https://lapide.org/" },
+    { label: "Calvin's Commentaries", url: "https://www.monergism.com/calvins-commentaries-0" },
+    { label: "Commentary On The Book Of Psalms - Saint Robert Bellarmine", url: "https://www.ecatholic2000.com/bellarmine/commentary-on-psalms.shtml" },
+    { label: "Russian Bible Study", url: "https://www.freebiblecommentary.org/russian_bible_study.htm" },
+    { label: "HAYDOCK CATHOLIC BIBLE COMMENTARY", url: "https://www.ecatholic2000.com/haydock/title.shtml" },
+    { label: "THEOLOGICAL DICTIONARY OF THE NEW TESTAMENT", url: "https://www.agathonlibrary.com/wp-content/uploads/2022/03/Gerhard-Kittel-Editor-Gerhard-Friedrich-Editor-Theological-Dictionary-of-the-New-Testament_-Abridged-in-One-Volume-Eerdmans-1985.pdf" },
+    { label: "Wulgata", url: "https://vulgate.org/" },
+    { label: "Greek Documents", url: "https://greekdoc.github.io/" },
+    { label: "Hebrew Old Testament", url: "http://www.qbible.com/hebrew-old-testament/genesis/" },
+    { label: "Psauterz Kochanowski", url: "https://literat.ug.edu.pl/jkpsalm/index.htm" },
+    { label: "Biblia Polskie Przekłady", url: "https://bibliepolskie.pl/zzteksty_vers_por.php" },
+    { label: "Komentarze Tomasza", url: "https://isidore.co/aquinas/" },
+    { label: "Komentarze z reformedbooksonline", url: "https://reformedbooksonline.com/commentaries/" },
+    { label: "isidore-książki", url: "https://isidore.co/" },
+    { label: "NKB-Naukowy-PL", url: "https://lubimyczytac.pl/cykl/38560/nowy-komentarz-biblijny" },
+    { label: "bestcommentaries", url: "https://bestcommentaries.com/" },
+    { label: "ACCS", url: "https://bestcommentaries.com/series/ancient-christian-commentary-on-scripture-accs/" },
+    { label: "Dionizy Kartuz", url: "https://onlinebooks.library.upenn.edu/webbin/metabook?id=denisworks" }
+];
+
+const superNormalize = (text) => {
+    return text.toLowerCase()
+        .replace(/ą/g, 'a').replace(/ć/g, 'c').replace(/ę/g, 'e')
+        .replace(/ł/g, 'l').replace(/ń/g, 'n').replace(/ó/g, 'o')
+        .replace(/ś/g, 's').replace(/ź/g, 'z').replace(/ż/g, 'z')
+        .replace(/\b(ksiega|list|swietego|sw|ewangelia|wedlug|do)\b/g, '')
+        .replace(/\b(pierwsza|pierwszy|i)\b/g, '1')
+        .replace(/\b(druga|drugi|ii)\b/g, '2')
+        .replace(/\b(trzecia|trzeci|iii)\b/g, '3')
+        .replace(/[^a-z0-9]/g, '')
+        .trim();
+};
+
+fetch('biblia.xml')
+    .then(r => r.text())
+    .then(data => {
+        const parser = new DOMParser();
+        bibleXml = parser.parseFromString(data, "text/xml");
+
+        const books = bibleXml.getElementsByTagName('BIBLEBOOK');
+        for (let b of books) {
+            booksMap.push({
+                id: b.getAttribute('bnumber'),
+                originalName: b.getAttribute('bname'),
+                shortName: b.getAttribute('bsname'),
+                cleanName: superNormalize(b.getAttribute('bname')),
+                cleanShort: superNormalize(b.getAttribute('bsname'))
+            });
+        }
+
+        buildVerseIndex(books);
+        renderHome();
+    });
+
+function buildVerseIndex(books) {
+    allVerses = [];
+    for (let b of books) {
+        const bName = b.getAttribute('bsname') || b.getAttribute('bname');
+        const bId = b.getAttribute('bnumber');
+        const chapters = b.getElementsByTagName('CHAPTER');
+        for (let c of chapters) {
+            const cNum = c.getAttribute('cnumber');
+            const verses = c.getElementsByTagName('VERS');
+            for (let v of verses) {
+                const vNum = v.getAttribute('vnumber');
+                allVerses.push({
+                    ref: `${bName} ${cNum}:${vNum}`,
+                    bId, cNum, vNum,
+                    text: v.textContent
+                });
+            }
+        }
+    }
+}
+
+function renderHome() {
+    let html = `<h3 style="margin-top:0; color: var(--accent);">- - - </h3>`;
+    html += `<div class="home-links">`;
+    myLinks.forEach(link => {
+        html += `<a href="https://atanazy-3.neocities.org/${link.url}" class="link-item">${link.label}</a>`;
+    });
+    html += `</div>`;
+    document.getElementById('content').innerHTML = html;
+}
+
+function runSearch() {
+    const rawVal = document.getElementById('q').value.trim();
+    if (!rawVal) { renderHome(); return; }
+
+    const parts = rawVal.match(/^(.*?)\s+(\d+)(?:[\s:.,]+(\d+))?$/);
+    let searchName, searchChap, searchVer;
+
+    if (parts) {
+        searchName = parts[1];
+        searchChap = parts[2];
+        searchVer = parts[3] || "0";
+    } else {
+        searchName = rawVal;
+        searchChap = "1";
+        searchVer = "0";
+    }
+
+    const cleanSearch = superNormalize(searchName);
+    let book = booksMap.find(b => b.cleanShort === cleanSearch) ||
+               booksMap.find(b => b.cleanName === cleanSearch) ||
+               booksMap.find(b => b.cleanName.includes(cleanSearch)) ||
+               booksMap.find(b => cleanSearch.includes(b.cleanName));
+
+    if (cleanSearch === "jd") book = booksMap.find(b => b.cleanShort === "jd");
+
+    if (!book) { renderError(`Nie znaleziono księgi: "${searchName}"`); return; }
+
+    display(book.id, searchChap, searchVer);
+}
+
+function display(bId, cNum, vNum) {
+    const container = document.getElementById('content');
+    const bookNode = bibleXml.querySelector(`BIBLEBOOK[bnumber="${bId}"]`);
+    const chapNode = bookNode.querySelector(`CHAPTER[cnumber="${cNum}"]`);
+
+    if (!chapNode) { renderError(`Księga ${bookNode.getAttribute('bname')} nie ma rozdziału ${cNum}.`); return; }
+
+    let html = `<h2>${bookNode.getAttribute('bname')} ${cNum}</h2><hr>`;
+
+    if (vNum === "0") {
+        const verses = chapNode.getElementsByTagName('VERS');
+        for (let v of verses) {
+            // Dodajemy spację po numerku wewnątrz spanu v-num lub tuż za nim
+html += `<span class="verse"><span class="v-num">${v.getAttribute('vnumber')}</span>&nbsp;${v.textContent}</span> `;
+        }
+    } else {
+        const vNode = chapNode.querySelector(`VERS[vnumber="${vNum}"]`);
+        if (!vNode) { renderError(`Brak wersetu ${vNum} w rozdziale ${cNum}.`); return; }
+        html += `<p class="verse"><span class="v-num">${vNum} </span>${vNode.textContent}</p>`;
+    }
+
+    container.innerHTML = html;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderError(msg) {
+    document.getElementById('content').innerHTML = `
+        <div class="error">${msg}</div>
+        <button onclick="renderHome()" style="margin-top:15px; background: var(--accent); color: var(--bg);">Wróć do linków</button>
+    `;
+}
+
+// ===== WYSZUKIWANIE SŁÓW =====
+
+/**
+ * Parsuje zapytanie:
+ * - fragmenty w cudzysłowie "..." => szukaj dokładnej frazy
+ * - pozostałe słowa => każde musi wystąpić (AND), pomijamy stop-words 1-literowe
+ * Zwraca { phrases: string[], words: string[] }
+ */
+function parseQuery(rawQuery) {
+    const phrases = [];
+    const words = [];
+
+    // Wyciągnij wszystkie frazy w cudzysłowie
+    const phraseRegex = /"([^"]+)"/g;
+    let match;
+    let remainder = rawQuery;
+
+    while ((match = phraseRegex.exec(rawQuery)) !== null) {
+        if (match[1].trim()) phrases.push(match[1].trim());
+    }
+
+    // Usuń frazy w cudzysłowie z remainder
+    remainder = rawQuery.replace(/"[^"]*"/g, ' ');
+
+    // Pozostałe tokeny traktuj jako AND-słowa, pomijaj 1-literowe
+    remainder.split(/\s+/).forEach(w => {
+        if (w.length > 1) words.push(w);
+    });
+
+    return { phrases, words };
+}
+
+let wsCurrentPage = 0;
+let wsResults = [];
+let wsQuery = '';
+const WS_PAGE_SIZE = 50;
+
+function runWordSearch() {
+    const query = document.getElementById('wq').value.trim();
+    if (!query) return;
+    if (!allVerses) {
+        document.getElementById('word-results').style.display = 'block';
+        document.getElementById('word-results').innerHTML = `<div class="wr-loading">Ładowanie indeksu...</div>`;
+        return;
+    }
+
+    const exact = document.getElementById('ws-exact').checked;
+    const caseSensitive = document.getElementById('ws-case').checked;
+    const limitVal = parseInt(document.getElementById('ws-limit').value);
+
+    document.getElementById('word-results').style.display = 'block';
+    document.getElementById('word-results').innerHTML = `<div class="wr-loading">Szukam...</div>`;
+
+    setTimeout(() => {
+        const results = searchVerses(query, exact, caseSensitive, limitVal);
+        wsResults = results;
+        wsQuery = query;
+        wsCurrentPage = 0;
+        renderWordResults();
+    }, 30);
+}
+
+function searchVerses(query, exact, caseSensitive, limit) {
+    const { phrases, words } = parseQuery(query);
+    const flags = caseSensitive ? 'g' : 'gi';
+
+    // Buduj wzorce dla fraz (dopasowanie dosłowne, nie \b na końcach)
+    const phrasePatterns = phrases.map(ph => {
+        const escaped = ph.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        return new RegExp(escaped, flags);
+    });
+
+    // Buduj wzorce dla pojedynczych słów (AND)
+    const wordPatterns = words.map(w => {
+        const escaped = w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        return new RegExp(exact ? `\\b${escaped}\\b` : escaped, flags);
+    });
+
+    const allPatterns = [...phrasePatterns, ...wordPatterns];
+    if (allPatterns.length === 0) return [];
+
+    const results = [];
+    for (let v of allVerses) {
+        const text = v.text;
+        if (allPatterns.every(p => { p.lastIndex = 0; return p.test(text); })) {
+            results.push(v);
+            if (limit > 0 && results.length >= limit) break;
+        }
+    }
+    return results;
+}
+
+function highlightText(text, query, exact, caseSensitive) {
+    const { phrases, words } = parseQuery(query);
+    let result = text;
+    const flags = caseSensitive ? 'g' : 'gi';
+
+    // Podświetl frazy najpierw (są dłuższe, mają priorytet)
+    phrases.forEach(ph => {
+        const escaped = ph.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const pattern = new RegExp(escaped, flags);
+        result = result.replace(pattern, m => `<mark class="wr-highlight">${m}</mark>`);
+    });
+
+    // Podświetl pojedyncze słowa (tylko jeśli nie są już wewnątrz znacznika <mark>)
+    words.forEach(w => {
+        const escaped = w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const pattern = new RegExp(exact ? `\\b${escaped}\\b` : escaped, flags);
+        // Podświetlaj tylko poza tagami HTML
+        result = result.replace(/(<[^>]*>)|([^<]+)/g, (m, tag, txt) => {
+            if (tag) return tag;
+            return txt.replace(pattern, m2 => `<mark class="wr-highlight">${m2}</mark>`);
+        });
+    });
+
+    return result;
+}
+
+function renderWordResults() {
+    const container = document.getElementById('word-results');
+    const exact = document.getElementById('ws-exact').checked;
+    const caseSensitive = document.getElementById('ws-case').checked;
+    const total = wsResults.length;
+    const pageCount = Math.ceil(total / WS_PAGE_SIZE);
+    const start = wsCurrentPage * WS_PAGE_SIZE;
+    const pageItems = wsResults.slice(start, start + WS_PAGE_SIZE);
+
+    if (total === 0) {
+        container.innerHTML = `<p style="color:#999; text-align:center;">Brak wyników dla: <em>${escapeHtml(wsQuery)}</em></p>`;
+        return;
+    }
+
+    let html = `<div class="wr-header">
+        <span style="color:var(--accent); font-weight:bold;">Wyniki dla: „${escapeHtml(wsQuery)}"</span>
+        <span class="wr-count">${total} wystąpień${document.getElementById('ws-limit').value !== '0' && total >= parseInt(document.getElementById('ws-limit').value) ? ' (limit)' : ''}</span>
+    </div>`;
+
+    pageItems.forEach(v => {
+        const highlighted = highlightText(escapeHtml(v.text), wsQuery, exact, caseSensitive);
+        html += `<div class="wr-entry" onclick="goToVerse('${v.bId}','${v.cNum}','${v.vNum}')">
+            <span class="wr-ref">${v.ref}</span>
+            <span class="wr-text">${highlighted}</span>
+        </div>`;
+    });
+
+    if (pageCount > 1) {
+        html += `<div class="wr-pagination">`;
+        if (wsCurrentPage > 0)
+            html += `<button onclick="wsGoPage(${wsCurrentPage - 1})">← Poprz.</button>`;
+
+        const from = Math.max(0, wsCurrentPage - 3);
+        const to = Math.min(pageCount - 1, wsCurrentPage + 3);
+        if (from > 0) html += `<button onclick="wsGoPage(0)">1</button><span style="color:#666">…</span>`;
+        for (let i = from; i <= to; i++) {
+            html += `<button class="${i === wsCurrentPage ? 'active' : ''}" onclick="wsGoPage(${i})">${i + 1}</button>`;
+        }
+        if (to < pageCount - 1) html += `<span style="color:#666">…</span><button onclick="wsGoPage(${pageCount - 1})">${pageCount}</button>`;
+
+        if (wsCurrentPage < pageCount - 1)
+            html += `<button onclick="wsGoPage(${wsCurrentPage + 1})">Nast. →</button>`;
+        html += `</div>`;
+    }
+
+    container.innerHTML = html;
+}
+
+function wsGoPage(n) {
+    wsCurrentPage = n;
+    renderWordResults();
+    document.getElementById('word-results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function goToVerse(bId, cNum, vNum) {
+    display(bId, cNum, vNum);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function escapeHtml(text) {
+    return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+document.getElementById('q').addEventListener('keypress', (e) => { if (e.key === 'Enter') runSearch(); });
+document.getElementById('wq').addEventListener('keypress', (e) => { if (e.key === 'Enter') runWordSearch(); });
+    </script>
+</body>
+</html>
